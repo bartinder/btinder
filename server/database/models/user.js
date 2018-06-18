@@ -1,15 +1,57 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const bcrypt = require('bcryptjs');
-mongoose.promise = Promise
+const validator = require('validator');
+ mongoose.promise = Promise
 
 // Define userSchema
-const userSchema = new Schema({
+// const userSchema = new Schema({
 
-	username: { type: String, unique: false, required: false },
-	password: { type: String, unique: false, required: false }
+// 	username: { type: String, unique: false, required: false },
+// 	password: { type: String, unique: false, required: false }
 
-})
+// })
+
+const userSchema = new mongoose.Schema({
+	email: {
+	  type: String,
+	  unique: [true, "Email is already in use"],
+	  required: [true, "Email field cannot be empty"],
+	  trim: true,
+	  validate: [validator.isEmail, "invalid email"]
+	},
+  
+	password: {
+	  type: String,
+	  trim: true,
+	  required: [true, "Password field cannot be empty"],
+	  validate: [
+		password => {
+		  return password && password.length > 6;
+		},
+		"Password need to be greater than 6 characters",
+	  ],
+	},
+  
+	firstName: {
+	  type: String,
+	  trim: true,
+	  required: [false, "First name field cannot be empty"],
+	},
+  
+	lastName: {
+	  type: String,
+	  trim: true,
+	  required: [false, "Last name field cannot be empty"],
+	},
+  
+	notes: [
+	  {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Note",
+	  },
+	],
+  });
 
 // Define schema methods
 userSchema.methods = {

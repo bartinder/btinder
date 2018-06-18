@@ -6,8 +6,11 @@ class LoginForm extends Component {
     constructor() {
         super()
         this.state = {
-            username: '',
+            email: '',
             password: '',
+            firstName:"",
+            lastName: "",
+            errorMessage: "",
             redirectTo: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -27,8 +30,10 @@ class LoginForm extends Component {
 
         axios
             .post('/user/login', {
-                username: this.state.username,
+                email: this.state.email,
                 password: this.state.password
+                // firstName: this.state.firstName,
+                // lastName: this.state.lastname
             })
             .then(response => {
                 console.log('login response: ')
@@ -37,7 +42,9 @@ class LoginForm extends Component {
                     // update App.js state
                     this.props.updateUser({
                         loggedIn: true,
-                        username: response.data.username
+                        email: response.data.email,
+                        firstName: response.data.firstName,
+                        lastName: response.data.lastName
                     })
                     // update the state to redirect to home
                     this.setState({
@@ -47,6 +54,7 @@ class LoginForm extends Component {
             }).catch(error => {
                 console.log('login error: ')
                 console.log(error);
+                this.setState({errorMessage: "There Was a Problem Logging In, Please Try Again!"})
                 
             })
     }
@@ -61,15 +69,15 @@ class LoginForm extends Component {
                     <form className="form-horizontal">
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">
-                                <label className="form-label" htmlFor="username">Username</label>
+                                <label className="form-label" htmlFor="username">Email: </label>
                             </div>
                             <div className="col-3 col-mr-auto">
                                 <input className="form-input"
                                     type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Username"
-                                    value={this.state.username}
+                                    id="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    value={this.state.email}
                                     onChange={this.handleChange}
                                 />
                             </div>
@@ -80,7 +88,7 @@ class LoginForm extends Component {
                             </div>
                             <div className="col-3 col-mr-auto">
                                 <input className="form-input"
-                                    placeholder="password"
+                                    placeholder="Password"
                                     type="password"
                                     name="password"
                                     value={this.state.password}
@@ -95,6 +103,9 @@ class LoginForm extends Component {
                                
                                 onClick={this.handleSubmit}
                                 type="submit">Login</button>
+                        </div>
+                        <div>
+                            {this.state.errorMessage}
                         </div>
                     </form>
                 </div>
