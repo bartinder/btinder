@@ -94,7 +94,8 @@ class Dashboard extends Component {
                     <li> First Name: {this.state.firstName} </li>
                      <li> Last Name: {this.state.lastName} </li>
                      <li> Email: {this.state.email} </li>
-        
+                     <li> Liked Bars: </li>
+                     <li> Disliked Bars: </li>
                 </ul>
                 </div>
             </div>
