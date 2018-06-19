@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 class Home extends Component {
     constructor() {
         super()
@@ -12,8 +13,8 @@ class Home extends Component {
         }
         return (
             <div>
-                <p>It's good to be home</p>
-                <img style={imageStyle} src="https://i.ytimg.com/vi/N1icEHtgb3g/maxresdefault.jpg" />
+                <p>Welcome To barTinder!</p>
+                <img style={imageStyle} src={require("../pictures/barTinderLogo.png")} alt="main-logo"/>
             </div>
         )
 
