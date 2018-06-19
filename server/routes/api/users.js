@@ -1,3 +1,5 @@
+// NOTHING ON THIS PAGE WORKS YET!!
+
 const router = require("express").Router();
 const db = require("../../database/models")
 // const booksController = require("../../controllers/booksController");
@@ -12,17 +14,7 @@ router.route("/api/users")
   })
 
 
-app.get('/api/user_data', function(req, res) {
 
-    if (req.user === undefined) {
-        // The user is not logged in
-        res.json({});
-    } else {
-        res.json({
-            username: req.user
-        });
-    }
-});
   
 
 // Matches with "/api/books/:id"

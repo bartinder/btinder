@@ -6,6 +6,7 @@ import Signup from './components/sign-up'
 import LoginForm from './components/login-form'
 import Navbar from './components/navbar'
 import Home from './components/home'
+import Dashboard from "./components/dashboard"
 
 
 class App extends Component {
@@ -69,7 +70,7 @@ class App extends Component {
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
-          <p>Join the party, {this.state.firstName}  {this.state.lastName}!</p>
+          <p>You Are Currently Logged In, {this.state.firstName}  {this.state.lastName}!</p>
         }
         {/* Routes to different components */}
         <Route
@@ -89,7 +90,14 @@ class App extends Component {
               signup={this.signup}
             />}
         />
-
+        <Route
+          path="/dashboard"
+          render = {() =>
+            <Dashboard
+            loggedIn = {this.props.loggedIn}
+          />}
+          
+        />
       </div>
     );
   }

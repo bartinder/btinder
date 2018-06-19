@@ -1,73 +1,17 @@
-## Simple MERN Passport Template
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This ReadMe is currently only instructions for group members building this app.
 
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+*Step 1:*
+Do intial git pull
 
-## Table of Contents
+*Step 2:*
+a) In order to insure that you have all of the necessary packages installed, while you are in the btinder directory, do a yarn install or npm install. This will download all of the needed node_modules that the package.json requires for the server side.
 
-- [About](#about)
-- [Instructions](#instructions)
-  - []
+b) Now we will install all of the node_modules needed for the client side. Switch to the cient directory. Again, do a yarn install or npm install and this will install all of the packages required by the package.json for the client side.
 
-# About
-I couldn't find a simple MERN passport tutorial, so I made one!
+*Step 3*
+Switch back to head btinder directory. You can run the server and client concurrently with the command npm run dev. This will run the server first and then at the same time run the react client side. If there are any issues it could be because some packages may have not been installed, like concurrently for example. If you need to manual download a package do so with this example... 
 
-## Built With
-
-Mongo, Express, ReactJS, Node.js, Javascript. 
-
-## Getting Started
-
-Clone the repo and follow the instructions.  You can view each step by running these commands from the terminal:
-
-```
-git checkout step-0
-git checkout step-1
-...
-```
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/en/)
-- [MongoDB](https://www.mongodb.com/)
-- [Nodemon](https://github.com/remy/nodemon)
-
-### Installing
-
-Run this command in the terminal:
-npm install
-npm run dev
-
-<<<<<<< HEAD
-### Completed Features
-=======
-# Instructions
+npm install concurrently --save
 
 
 
-### Completed Features
-
->>>>>>> master
-- [ ] Sign up, login and logout.
-- [ ] Authentication with passport and bcryptjs.
-- [ ] Session information stored with express sessions.
-- [ ] Store data for production in sessions with connect-mongo
-
-### Next Steps
-<<<<<<< HEAD
-=======
-
->>>>>>> master
-- [ ] Add redux
-
-## Author
-
-Brendt Bly
-
-## Acknowledgments
-
-Thanks to the people who provided great examples:
-https://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619
-
-https://github.com/thechutrain/mern-passport
