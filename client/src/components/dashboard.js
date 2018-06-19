@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
-import App from '../App'
+
 
 class Dashboard extends Component {
     constructor() {
     super()
     this.state = {
         loggedIn: false,
-        email: "",
+        email: null,
         id: null,
         firstName: "",
         lastName: "",
@@ -52,16 +52,16 @@ class Dashboard extends Component {
           }
         })
       }
-    
-
-        
-    
 
 
     render() {
         const fontStyles = {
             fontSize: 100
         }
+        const imageStyle = {
+            width: 400
+        }
+
         if (this.state.responseReturned && !this.state.loggedIn) {
             // return <Redirect to={{ pathname: "/login"}} />
             return (
@@ -86,6 +86,9 @@ class Dashboard extends Component {
         
         return (
             <div>
+                <div>
+                    <img style={imageStyle} src={require("../pictures/barTinderLogo.png")} />
+                </div>
                 <p>
                     Dashboard Page
                 </p>
