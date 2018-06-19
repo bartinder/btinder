@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -87,7 +87,7 @@ class Dashboard extends Component {
         return (
             <div>
                 <div>
-                    <img style={imageStyle} src={require("../pictures/barTinderLogo.png")} />
+                    <img style={imageStyle} src={require("../pictures/barTinderLogo.png")} alt="Logo" />
                 </div>
                 <p>
                     Dashboard Page

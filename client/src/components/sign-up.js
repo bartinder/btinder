@@ -8,9 +8,9 @@ class Signup extends Component {
 		this.state = {
 			email: '',
 			password: '',
-			confirmPassword: '',
 			firstName: '',
 			lastName: "",
+			age: "",
 			redirectTo: null,
 			errorMessage: null
 
@@ -123,6 +123,20 @@ render() {
 							type="password"
 							name="password"
 							value={this.state.password}
+							onChange={this.handleChange}
+						/>
+					</div>
+				</div>
+				<div className="form-group">
+					<div className="col-1 col-ml-auto">
+						<label className="form-label" htmlFor="password">Age: </label>
+					</div>
+					<div className="col-3 col-mr-auto">
+						<input className="form-input"
+							placeholder="Age"
+							type="age"
+							name="age"
+							value={this.state.age}
 							onChange={this.handleChange}
 						/>
 					</div>
