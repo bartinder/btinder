@@ -6,13 +6,18 @@ import Signup from './components/sign-up'
 import LoginForm from './components/login-form'
 import Navbar from './components/navbar'
 import Home from './components/home'
+import Dashboard from "./components/dashboard"
+
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       loggedIn: false,
-      username: null
+      email: null,
+      firstName: "",
+      lastName: "",
+      id: null
     }
 
     this.getUser = this.getUser.bind(this)
@@ -28,22 +33,31 @@ class App extends Component {
     this.setState(userObject)
   }
 
+  
+
   getUser() {
-    axios.get('/user/').then(response => {
-      console.log('Get user response: ')
-      console.log(response.data)
+    axios.get('/user/', function(req,res) {
+        console.log("is this working?");
+      }).then(response => {
+      console.log('Get user response: ');
+      console.log(response.data);
       if (response.data.user) {
-        console.log('Get User: There is a user saved in the server session: ')
+        console.log('Get User: There is a user saved in the server session: ');
 
         this.setState({
           loggedIn: true,
-          username: response.data.user.username
-        })
+          email: response.data.user.email,
+          id: response.data.user._id,
+          firstName: response.data.user.firstName,
+          lastName: response.data.user.lastName
+        });
+         
+        
       } else {
         console.log('Get user: no user');
         this.setState({
           loggedIn: false,
-          username: null
+          email: null
         })
       }
     })
@@ -56,7 +70,7 @@ class App extends Component {
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
-          <p>Join the party, {this.state.username}!</p>
+          <p>You Are Currently Logged In, {this.state.firstName}  {this.state.lastName}!</p>
         }
         {/* Routes to different components */}
         <Route
@@ -76,7 +90,14 @@ class App extends Component {
               signup={this.signup}
             />}
         />
-
+        <Route
+          path="/dashboard"
+          render = {() =>
+            <Dashboard
+            loggedIn = {this.props.loggedIn}
+          />}
+          
+        />
       </div>
     );
   }
