@@ -1,0 +1,22 @@
+.container {
+  opacity: 1;
+}
+
+.navbar {
+  margin: 0;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  background-color:#62107F;
+  text-align: center;
+  position:fixed;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+  height: 50px;
+}
+
+
+@media only screen and (min-width: 600px) {
+
+}
