@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -74,6 +74,7 @@ class Dashboard extends Component {
             )
         }
         else if (!this.state.loggedIn) {
+            // return <Redirect to={{ pathname: "/login"}} />
             return (
             <div>
                 <p style= {fontStyles}> Please Login! </p>
