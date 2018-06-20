@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
-import { Route, Link } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
+import { Route, Link, browserHistory } from 'react-router-dom'
 import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios'
@@ -21,8 +21,9 @@ class Navbar extends Component {
               loggedIn: false,
               email: null
             })
-            window.location.reload();
           }
+          window.location.assign("/login");
+
         }).catch(error => {
             console.log('Logout error')
         })
@@ -40,12 +41,9 @@ class Navbar extends Component {
                     <div className="col-4" >
                         {loggedIn ? (
                             <section className="navbar-section">
-                                <Link to="/" className="btn btn-link text-secondary">
-                                <span className="text-secondary">Home</span>
-                                    </Link>
-                                
-                                <Link to="/dashboard" className="btn btn-link text-secondary">
-                                    <span className="text-secondary">Dashboard</span>
+                        
+                                <Link to="/discover" className="btn btn-link text-secondary">
+                                    <span className="text-secondary">Discover</span>
                                     </Link>
 
                                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>

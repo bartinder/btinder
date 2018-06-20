@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-import { Route, Link } from 'react-router-dom'
+import axios from 'axios';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // components
-import Signup from './components/sign-up'
-import LoginForm from './components/login-form'
-import Navbar from './components/navbar'
-import Home from './components/home'
-import Dashboard from "./components/dashboard"
+import Signup from './components/sign-up';
+import LoginForm from './components/login-form';
+import Navbar from './components/navbar';
+import Home from './components/home';
+import Dashboard from "./components/dashboard";
+import Discover from "./pages/Discover";
+// import Footer from "./components/Footer";
+import Wrapper from "./components/Wrapper"
 
 
 class App extends Component {
@@ -65,7 +68,9 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
       <div className="App">
+      <Wrapper>
    
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
@@ -73,9 +78,12 @@ class App extends Component {
           <p>You Are Currently Logged In, {this.state.firstName}  {this.state.lastName}!</p>
         }
         {/* Routes to different components */}
+
         <Route
           exact path="/"
-          component={Home} />
+          component={Home} 
+        />
+        
         <Route
           path="/login"
           render={() =>
@@ -96,9 +104,15 @@ class App extends Component {
             <Dashboard
             loggedIn = {this.props.loggedIn}
           />}
-          
         />
+        <Route
+          path="/discover"
+          component={Discover}
+        />
+
+        </Wrapper>
       </div>
+    </Router>
     );
   }
 }

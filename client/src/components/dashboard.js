@@ -74,6 +74,7 @@ class Dashboard extends Component {
             )
         }
         else if (!this.state.loggedIn) {
+            // return <Redirect to={{ pathname: "/login"}} />
             return (
             <div>
                 <p style= {fontStyles}> Please Login! </p>
@@ -87,7 +88,7 @@ class Dashboard extends Component {
         return (
             <div>
                 <div>
-                    <img style={imageStyle} src={require("../pictures/barTinderLogo.png")} />
+                    <img style={imageStyle} src={require("../pictures/barTinderLogo.png")} alt="Logo" />
                 </div>
                 <p>
                     Dashboard Page

@@ -34,7 +34,8 @@ class Signup extends Component {
           email: this.state.email,
           password: this.state.password,
           firstName: this.state.firstName,
-          lastName: this.state.lastName
+          lastName: this.state.lastName,
+          age: this.state.age
         })
         .then(response => {
           console.log(response);
@@ -144,6 +145,23 @@ class Signup extends Component {
                   type="password"
                   name="password"
                   value={this.state.password}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+            <div className="form-group">
+              <div className="col-1 col-ml-auto">
+                <label className="form-label" htmlFor="password">
+                  Age:{" "}
+                </label>
+              </div>
+              <div className="col-3 col-mr-auto">
+                <input
+                  className="form-input"
+                  placeholder="Age"
+                  type="age"
+                  name="age"
+                  value={this.state.age}
                   onChange={this.handleChange}
                 />
               </div>
