@@ -58,6 +58,8 @@ const userSchema = new mongoose.Schema({
 		type: String
 	}
 
+	// Need to add option of profilePicture to be entered as a jpg or png as well!
+
   });
 
 // Define schema methods
