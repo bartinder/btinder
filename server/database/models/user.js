@@ -4,6 +4,8 @@ const bcrypt = require('bcryptjs');
 const validator = require('validator');
  mongoose.promise = Promise
 
+//  User Schema is Completed
+
 const userSchema = new mongoose.Schema({
 
 	email: {
