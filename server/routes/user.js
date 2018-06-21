@@ -4,7 +4,6 @@ const User = require('../database/models/user');
 const passport = require('../passport');
 const mongoose = require('mongoose');
 
-
 router.post('/', (req, res) => {
     console.log('user signup');
     console.log(req.user);
