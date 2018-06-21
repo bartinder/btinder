@@ -3,15 +3,7 @@ const Schema = mongoose.Schema
 const bcrypt = require('bcryptjs');
 const validator = require('validator');
  mongoose.promise = Promise
-
-// Define userSchema
-// const userSchema = new Schema({
-
-// 	username: { type: String, unique: false, required: false },
-// 	password: { type: String, unique: false, required: false }
-
-// })
-
+ 
 const userSchema = new mongoose.Schema({
 	email: {
 	  type: String,
@@ -45,12 +37,12 @@ const userSchema = new mongoose.Schema({
 	  required: [false, "Last name field cannot be empty"],
 	},
   
-	notes: [
-	  {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: "Note",
-	  },
-	],
+	age: {
+	  type: Number,
+	  trim: true,
+	  required: [true, "Age field cannot be empty"]
+	}
+
   });
 
 // Define schema methods
