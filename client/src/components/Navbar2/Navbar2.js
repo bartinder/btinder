@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import "./Navbar2.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 // const Navbar = props => (
@@ -49,9 +49,9 @@ import "./Navbar.css";
 //   </nav>
 // );
 
-const Navbar = () => (
-  <div class="container">
-    <nav class="navbar fixed-top justify-content-center">
+const Navbar2 = () => (
+  <div className="container">
+    <nav className="navbar fixed-top justify-content-center">
       <img src={require("./logo4.png")} alt="logo" className="navbar fixed-top justify-content-center"/>
     </nav>
 
@@ -59,4 +59,4 @@ const Navbar = () => (
 
 );
 
-export default Navbar;
+export default Navbar2;
