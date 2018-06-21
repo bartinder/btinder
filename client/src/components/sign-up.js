@@ -13,7 +13,6 @@ class Signup extends Component {
 			age: "",
 			redirectTo: null,
 			errorMessage: null
-
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
@@ -67,7 +66,7 @@ render() {
 	} else {
 	return (
 		<div className="SignupForm">
-			<h4>Sign up</h4>
+			<h4>Sign Up</h4>
 			<form className="form-horizontal">
 				<div className="form-group">
 					<div className="col-1 col-ml-auto">
@@ -135,7 +134,7 @@ render() {
 					<div className="col-3 col-mr-auto">
 						<input className="form-input"
 							placeholder="Age"
-							type="age"
+							type="number"
 							name="age"
 							value={this.state.age}
 							onChange={this.handleChange}
