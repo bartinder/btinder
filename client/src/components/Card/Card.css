@@ -1,3 +1,7 @@
+body {
+  height: 500px;
+}
+
 .card {
   background-size: cover;
   background-position: center;
@@ -5,32 +9,22 @@
   /* border: 6px solid white; */
   height: 300px;
   width: 100%;;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
   position: relative;
   margin: 0 auto;
-  margin-top: 30px;
-  top: 30px;
+  margin-top: 100px;
+  /* top: 30px; */
 }
 
 .card-body {
   position: absolute;
   top: 250px;
-  border: 6px solid white;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  background-color: white;
+  border: 6px solid #E0DCE5;
+  /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
+  background-color: #E0DCE5;
   width: 100%;
   font-size: 12px;
-}
-
-.card .fa-spinner {
-  font-size: 180px;
-  position: absolute;
-  left: 25%;
-  top: 25%;
-}
-
-img {
-  height:100%;
+  padding: 0;
 }
 
 

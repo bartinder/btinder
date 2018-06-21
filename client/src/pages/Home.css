@@ -1,0 +1,39 @@
+.wrapper {
+  position: relative;
+
+}
+
+.bg { 
+    /* The image used */
+    background-image: url("../pictures/homeBackground_400x700.png");
+
+    /* Full height */
+    height: 700px; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    /* width: 100%; */
+}
+
+.logo {
+  width: 50%;
+  z-index: 2;
+}
+
+.btn.col-mr-auto {
+  position: absolute;
+  top: 58%;
+  left: 40%;
+  background-color: #62107F;
+  border-color: #62107F;
+  color: white;
+}
+
+.btn.col-mr-auto:hover {
+  background-color: #62107F;
+  border-color: #62107F;
+  color: white;
+}
