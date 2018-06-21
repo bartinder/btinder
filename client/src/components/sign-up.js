@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import FacebookLoginWithButton from "../components/Facebook/facebook-with-button"
+import FacebookLoginWithButton from "../components/Facebook/facebook-with-button";
+
 
 class Signup extends Component {
 	constructor() {
@@ -16,8 +17,8 @@ class Signup extends Component {
 			errorMessage: null,
 			facebookId: "",
 			accessToken: "",
-			profilePicture: "",
-			response: ""
+			profilePicture: null
+		
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
@@ -28,9 +29,11 @@ class Signup extends Component {
 		})
 	}
 	handleSubmit(event) {
+		
 		console.log('sign-up handleSubmit, email: ')
 		console.log(this.state.email)
 		event.preventDefault()
+		this.setState({errorMessage: ""})
 
 		if (this.state.password.length > 7) {
 		//request to server to add a new email/password
@@ -44,16 +47,44 @@ class Signup extends Component {
 		})
 			.then(response => {
 				console.log(response)
+				const rd = response.data
 				if (!response.data.error && !response.data.errors) {
 					console.log('successful signup')
 					this.setState({ //redirect to login page
 						redirectTo: '/login'
 					})
 				} else {
-					console.log(response.data.error || response.data.errors.email.message);
-					if (response.data.error) {this.setState({ errorMessage: response.data.error})} 
-					else {this.setState({errorMessage: response.data.errors.email.message})};
+					if (rd.error) 
+						{console.log(rd.error)};
+
+					if (rd.errors) {
+						console.log(rd.errors)
+						if (rd.errors.email) {
+							this.setState({errorMessage: rd.errors.email.message});
+							console.log(rd.errors.email.message);
+						}
+						else if (rd.errors.firstName) {
+							this.setState({errorMessage: rd.errors.firstName.message});
+							console.log(rd.errors.firstName.message);
+						}
+						else if (rd.errors.lastName) {
+							this.setState({errorMessage: rd.errors.lastName.message});
+							console.log(rd.errors.lastName.message);
+						}
+						else if (rd.errors.age) {
+							this.setState({errorMessage: rd.errors.age.message})
+							console.log(rd.errors.profilePicture.message);
+						}
+						else if (rd.errors.profilePicture) {
+							this.setState({errorMessage: rd.errors.profilePicture.message})
+							console.log(rd.errors.profilePicture.message);
+						}
+					};
+					// if (rd.error) {this.setState({ errorMessage: response.data.error})}
+					// if (response.data.errors.profilePicture.message) {{this.setState({errorMessage: response.data.errors.profilePicture.message})}}
+					// else {this.setState({errorMessage: response.data.errors.email.message})};
 				}
+			
 			}).catch(error => {
 				console.log('signup error: ')
 				console.log(error)
@@ -81,8 +112,9 @@ class Signup extends Component {
 				  + "?fields=picture.height(961)&access_token=" + response.accessToken)
 		.then(res => {
 		   console.log(res)
-		   this.setState({profilePicture: res.data.picture.data.url})
-		   console.log("Profile Picture: ", this.state.profilePicture)
+		   this.setState({profilePicture: res.data.picture.data.url});
+		   console.log("Profile Picture: ", this.state.profilePicture);
+		   this.setState({errorMessage: ""});
 		})
 	  };
 
