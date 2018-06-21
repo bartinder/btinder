@@ -3,13 +3,22 @@ import React, { Component } from 'react'
 import { Route, Link, browserHistory } from 'react-router-dom'
 import logo from '../logo.svg';
 import '../App.css';
-import axios from 'axios'
+import axios from 'axios';
+import ProfilePicture from "./ProfilePicture/ProfilePicture";
 
 class Navbar extends Component {
-    constructor() {
+    constructor(props) {
         super()
         this.logout = this.logout.bind(this)
     }
+    
+    // componentDidMount() {
+    //     this.getUser();
+    // }
+
+    // getUser() {
+    //     axios.get("/user")
+    // }
 
     logout(event) {
         event.preventDefault()
@@ -36,12 +45,17 @@ class Navbar extends Component {
         
         return (
             <div>
-
+                        
                 <header className="navbar App-header" id="nav-container">
+                        
                     <div className="col-4" >
                         {loggedIn ? (
                             <section className="navbar-section">
-                        
+
+                                <Link to="/friends" className="btn btn-link text-secondary">
+                                    <span className="text-secondary">Friends</span>
+                                    </Link>
+
                                 <Link to="/discover" className="btn btn-link text-secondary">
                                     <span className="text-secondary">Discover</span>
                                     </Link>
@@ -49,6 +63,12 @@ class Navbar extends Component {
                                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
                                 <span className="text-secondary">Logout</span>
                                     </Link>
+                                <div className="profilePicture">
+                                    <div>
+                                        {this.props.firstName} {this.props.lastName}
+                                    </div>
+                                    <ProfilePicture src={this.props.src}/>
+                                </div>
                                 
                             </section>
                         ) : (
@@ -69,6 +89,7 @@ class Navbar extends Component {
                     <div id="top-filler"></div>
                         <img src={logo} className="App-logo" alt="logo" />
                         <h1 className="App-title">barTinder</h1>
+                        
                     </div>
                 </header>
             </div>
