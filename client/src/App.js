@@ -9,7 +9,7 @@ import Home from './components/home';
 import Dashboard from "./components/dashboard";
 import Discover from "./pages/Discover";
 // import Footer from "./components/Footer";
-import Wrapper from "./components/Wrapper"
+import Wrapper from "./components/Wrapper";
 
 
 class App extends Component {
@@ -39,7 +39,6 @@ class App extends Component {
   }
 
   
-
   getUser() {
     axios.get('/user/', function(req,res) {
         console.log("is this working?");
@@ -48,17 +47,14 @@ class App extends Component {
       console.log(response.data);
       if (response.data.user) {
         console.log('Get User: There is a user saved in the server session: ');
-
         this.setState({
           loggedIn: true,
           email: response.data.user.email,
           id: response.data.user._id,
           firstName: response.data.user.firstName,
           lastName: response.data.user.lastName,
-          proiflePicture: response.data.user.profilePicture
+          profilePicture: response.data.user.profilePicture
         });
-        console.log("profile picture: ", this.state.profilePicture)
-        
         
       } else {
         console.log('Get user: no user');
@@ -78,24 +74,35 @@ class App extends Component {
       <Router>
       <div className="App">
       <Wrapper>
-   
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        
+        <Navbar 
+        updateUser={this.updateUser} 
+        loggedIn={this.state.loggedIn} 
+        src={this.state.profilePicture}
+        firstName={this.state.firstName}
+        lastName={this.state.lastName}/>
         {/* greet user if logged in: */}
-        {this.state.loggedIn &&
-          <div>
-            <p>
-              You Are Currently Logged In, {this.state.firstName}  {this.state.lastName}!
-            </p>
-            <img src= {this.state.proiflePicture} style = {imageStyle}/>
-          </div>
-        }
+        {/* {this.state.loggedIn &&
+          // <div style={{height: "10px", backgroundColor: ""}}>
+          //   <p>
+          //   </p>
+          // </div>
+        } */}
         {/* Routes to different components */}
 
         <Route
           exact path="/"
           component={Home} 
         />
-        
+
+        <Route
+          exact path="/friends"
+          render = {() => 
+            <Home 
+              loggedIn = {this.state.loggedIn}
+          />}
+        />
+
         <Route
           path="/login"
           render={() =>

@@ -13,7 +13,9 @@ const Card = props => (
     <p className="card-text">Demographic: 23-30</p>
   </div>
   {!props.image && <i className="fa fa-spinner fa-spin" aria-hidden="true" />}
-  <Button/>
+  <Button 
+     onClick = {props.handleBtnClick}
+  />
 </div>
 );
 

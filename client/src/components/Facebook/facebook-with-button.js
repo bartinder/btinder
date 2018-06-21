@@ -28,7 +28,7 @@ class ReactFacebookLoginWithButton extends React.Component {
   };
 
   static defaultProps = {
-    textButton: 'Use Facebook Profile Pic',
+    textButton: ' Use Facebook Profile Picture',
     typeButton: 'button',
     size: 'metro',
     fields: 'name',
@@ -74,7 +74,7 @@ class ReactFacebookLoginWithButton extends React.Component {
         )}
         <this.props.tag
           type={typeButton}
-          className={`${cssClass} ${size}`}
+          // className={`${cssClass} ${size}`}
           style={ buttonStyle }
           onClick={onClick}
           {...optionalProps}

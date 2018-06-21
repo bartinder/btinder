@@ -20,14 +20,18 @@ class Signup extends Component {
 			profilePicture: null
 		
 		}
-		this.handleSubmit = this.handleSubmit.bind(this)
-		this.handleChange = this.handleChange.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+	
 	}
+
+
 	handleChange(event) {
 		this.setState({
 			[event.target.name]: event.target.value
 		})
 	}
+
 	handleSubmit(event) {
 		
 		console.log('sign-up handleSubmit, email: ')
@@ -48,7 +52,7 @@ class Signup extends Component {
 			.then(response => {
 				console.log(response)
 				const rd = response.data
-				if (!response.data.error && !response.data.errors) {
+				if (!rd.error && !rd.errors) {
 					console.log('successful signup')
 					this.setState({ //redirect to login page
 						redirectTo: '/login'
@@ -80,10 +84,8 @@ class Signup extends Component {
 							console.log(rd.errors.profilePicture.message);
 						}
 					};
-					// if (rd.error) {this.setState({ errorMessage: response.data.error})}
-					// if (response.data.errors.profilePicture.message) {{this.setState({errorMessage: response.data.errors.profilePicture.message})}}
-					// else {this.setState({errorMessage: response.data.errors.email.message})};
-				}
+				
+				};
 			
 			}).catch(error => {
 				console.log('signup error: ')
@@ -100,14 +102,6 @@ class Signup extends Component {
 		console.log(response);
 		this.setState({facebookId: response.id});
 		this.setState({accessToken: response.accessToken});
-		// this.setState({profilePicture: response.picture.data.url});
-		// this.setState({firstName: response.first_name});
-		// this.setState({lastName: response.last_name});
-		// this.setState({loggedIn: true});
-		// console.log(this.state.loggedIn);
-		console.log(response.id);
-		console.log(response.accessToken);
-		console.log(response.picture.data.url);
 		axios.get("https://graph.facebook.com/v2.11/" + response.id 
 				  + "?fields=picture.height(961)&access_token=" + response.accessToken)
 		.then(res => {
@@ -123,7 +117,9 @@ render() {
 	const buttonStyle = {
 		backgroundColor: "#4C69BA",
 		borderColor: "#4C69BA",
-		color: "#FFF"
+		color: "#FFF",
+		cursor: "pointer",
+		// height:
 	}
 	const imageStyle = {
 		height: "200px"
@@ -209,11 +205,12 @@ render() {
 					</div>
 				</div>
 				<div className="form-group">
-					<div className="col-1 col-ml-auto">
+					<div className="col-1 col-ml-auto" style={{marginLeft:'30em'}}>
 						<label className="form-label" htmlFor="avatar">Profile Picture: </label>
 					</div>
 					{!this.state.profilePicture ? (
-					<div className="col-3 col-mr-auto">
+					
+					<div className="col-3 col-mr-auto" style={{marginRight: 0}}>
 						<input className="form-input"
 							placeholder="Picture"
 							type="file"
@@ -224,7 +221,7 @@ render() {
 						/>
 					</div>
 					) : (
-						<div className="col-3 col-mr-auto">
+					<div className="col-3 col-mr-auto">
 						<input className="form-input"
 							placeholder="Facebook Image Chosen!"
 							type="text"
@@ -234,10 +231,10 @@ render() {
 						/>
 					</div>
 					)}
-				</div>
-				<div>
+			
+				
 				{!this.state.profilePicture ? (
-				<div>
+				<div className="facebook">
 					<FacebookLoginWithButton
 						appId="2035101990142770"
 						autoLoad={true}
@@ -251,6 +248,7 @@ render() {
 						show_faces={true}
 						size="large"
 						buttonStyle= {buttonStyle}
+						onMouseEnter={this.mouseEnter}
 					/>
 				</div>
 				) : (<img src= {this.state.profilePicture} style={imageStyle}/>)}

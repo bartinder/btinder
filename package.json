@@ -18,6 +18,7 @@
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
+    "semantic-ui-react": "^0.81.1",
     "spectre.css": "^0.5.0",
     "validator": "^10.3.0"
   },
@@ -33,6 +34,6 @@
     "dev": "concurrently \"npm run start:server\" \"npm run start:client\" "
   },
   "devDependencies": {
-    "concurrently": "^3.5.1"
+    "concurrently": "^3.6.0"
   }
 }

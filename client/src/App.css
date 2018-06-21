@@ -27,6 +27,15 @@
   margin-top: auto;
   
 }
+
+.facebook {
+  opacity: 1.0
+}
+
+.facebook:hover {
+  opacity: 0.8
+}
+
 #top-filler {
   margin-bottom: auto;
 }

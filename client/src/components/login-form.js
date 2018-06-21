@@ -10,8 +10,10 @@ class LoginForm extends Component {
             password: '',
             firstName:"",
             lastName: "",
+            profilePicture: null,
+            age: "",
             errorMessage: "",
-            redirectTo: null
+            redirectTo: null,
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -44,7 +46,10 @@ class LoginForm extends Component {
                         loggedIn: true,
                         email: response.data.email,
                         firstName: response.data.firstName,
-                        lastName: response.data.lastName
+                        lastName: response.data.lastName,
+                        age: response.data.age,
+                        profilePicture: response.data.profilePicture,
+                        src: response.data.profilePicture
                     })
                     // update the state to redirect to home
                     this.setState({
