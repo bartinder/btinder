@@ -20,6 +20,7 @@ class App extends Component {
       email: null,
       firstName: "",
       lastName: "",
+      proiflePicture: "",
       id: null
     }
 
@@ -34,6 +35,7 @@ class App extends Component {
 
   updateUser (userObject) {
     this.setState(userObject)
+    window.location.reload();
   }
 
   
@@ -52,9 +54,11 @@ class App extends Component {
           email: response.data.user.email,
           id: response.data.user._id,
           firstName: response.data.user.firstName,
-          lastName: response.data.user.lastName
+          lastName: response.data.user.lastName,
+          proiflePicture: response.data.user.profilePicture
         });
-         
+        console.log("profile picture: ", this.state.profilePicture)
+        
         
       } else {
         console.log('Get user: no user');
@@ -67,6 +71,9 @@ class App extends Component {
   }
 
   render() {
+    const imageStyle = {
+      height: "100px"
+    }
     return (
       <Router>
       <div className="App">
@@ -75,7 +82,12 @@ class App extends Component {
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
-          <p>You Are Currently Logged In, {this.state.firstName}  {this.state.lastName}!</p>
+          <div>
+            <p>
+              You Are Currently Logged In, {this.state.firstName}  {this.state.lastName}!
+            </p>
+            <img src= {this.state.proiflePicture} style = {imageStyle}/>
+          </div>
         }
         {/* Routes to different components */}
 

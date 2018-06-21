@@ -5,7 +5,7 @@ const validator = require('validator');
  mongoose.promise = Promise
 
 const userSchema = new mongoose.Schema({
-	
+
 	email: {
 	  type: String,
 	  unique: [true, "Email is already in use"],
@@ -41,7 +41,7 @@ const userSchema = new mongoose.Schema({
 	age: {
 	  type: Number,
 	  trim: true,
-	  required: [true, "Age field cannot be empty"]
+	  required: [true, "Please Enter Your Age!"]
 	},
 
 	likedArray: {
@@ -52,6 +52,10 @@ const userSchema = new mongoose.Schema({
 	disLikedArray: {
 		type: Array,
 		required: [false, ""]
+	},
+
+	profilePicture: { 
+		type: String
 	}
 
   });

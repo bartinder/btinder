@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import FacebookLoginWithButton from "../components/Facebook/facebook-with-button"
 
 class Signup extends Component {
 	constructor() {
@@ -12,7 +13,11 @@ class Signup extends Component {
 			lastName: "",
 			age: "",
 			redirectTo: null,
-			errorMessage: null
+			errorMessage: null,
+			facebookId: "",
+			accessToken: "",
+			profilePicture: "",
+			response: ""
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
@@ -34,7 +39,8 @@ class Signup extends Component {
 			password: this.state.password,
 			firstName: this.state.firstName,
 			lastName: this.state.lastName,
-			age: this.state.age
+			age: this.state.age,
+			profilePicture: this.state.profilePicture
 		})
 			.then(response => {
 				console.log(response)
@@ -59,8 +65,37 @@ class Signup extends Component {
 		}
 	}
 
+	responseFacebook = (response) => {
+		console.log(response);
+		this.setState({facebookId: response.id});
+		this.setState({accessToken: response.accessToken});
+		// this.setState({profilePicture: response.picture.data.url});
+		// this.setState({firstName: response.first_name});
+		// this.setState({lastName: response.last_name});
+		// this.setState({loggedIn: true});
+		// console.log(this.state.loggedIn);
+		console.log(response.id);
+		console.log(response.accessToken);
+		console.log(response.picture.data.url);
+		axios.get("https://graph.facebook.com/v2.11/" + response.id 
+				  + "?fields=picture.height(961)&access_token=" + response.accessToken)
+		.then(res => {
+		   console.log(res)
+		   this.setState({profilePicture: res.data.picture.data.url})
+		   console.log("Profile Picture: ", this.state.profilePicture)
+		})
+	  };
+
 
 render() {
+	const buttonStyle = {
+		backgroundColor: "#4C69BA",
+		borderColor: "#4C69BA",
+		color: "#FFF"
+	}
+	const imageStyle = {
+		height: "200px"
+	}
 	if (this.state.redirectTo) {
 		return <Redirect to={{ pathname: this.state.redirectTo }} />
 	} else {
@@ -140,6 +175,53 @@ render() {
 							onChange={this.handleChange}
 						/>
 					</div>
+				</div>
+				<div className="form-group">
+					<div className="col-1 col-ml-auto">
+						<label className="form-label" htmlFor="avatar">Profile Picture: </label>
+					</div>
+					{!this.state.profilePicture ? (
+					<div className="col-3 col-mr-auto">
+						<input className="form-input"
+							placeholder="Picture"
+							type="file"
+							name="avatar"
+							value= ""
+							accept="image/png, image/jpeg"
+							onChange={this.handleChange}
+						/>
+					</div>
+					) : (
+						<div className="col-3 col-mr-auto">
+						<input className="form-input"
+							placeholder="Facebook Image Chosen!"
+							type="text"
+							name="avatar"
+							value= ""
+							accept="image/png, image/jpeg"
+						/>
+					</div>
+					)}
+				</div>
+				<div>
+				{!this.state.profilePicture ? (
+				<div>
+					<FacebookLoginWithButton
+						appId="2035101990142770"
+						autoLoad={true}
+						fields="name,email,picture,first_name,last_name"
+						callback={this.responseFacebook}
+						icon="fa-facebook"
+						render={renderProps => (
+						<button onClick={renderProps.onClick}></button>
+						)}
+						scope="user_friends, user_location"
+						show_faces={true}
+						size="large"
+						buttonStyle= {buttonStyle}
+					/>
+				</div>
+				) : (<img src= {this.state.profilePicture} style={imageStyle}/>)}
 				</div>
 				<div className="form-group ">
 					<div className="col-7"></div>

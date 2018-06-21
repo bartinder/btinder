@@ -9,7 +9,7 @@ router.post('/', (req, res) => {
     console.log('user signup');
     console.log(req.user);
 
-    const { email, password, firstName, lastName, age } = req.body
+    const { email, password, firstName, lastName, age, profilePicture } = req.body
     // ADD VALIDATION
     User.findOne({ email: email }, (err, user) => {
         if (err) {
@@ -25,7 +25,8 @@ router.post('/', (req, res) => {
                 password: password,
                 firstName: firstName,
                 lastName: lastName,
-                age: age
+                age: age,
+                profilePicture: profilePicture
             })
             newUser.save((err, savedUser) => {
                 if (err) return res.json(err)
@@ -50,7 +51,8 @@ router.post(
             email: req.user.email,
             firstName: req.user.firstName,
             lastName: req.user.lastName,
-            age: req.user.age
+            age: req.user.age,
+            profilePicture: req.user.profilePicture
         };
         res.send(userInfo);
     }
