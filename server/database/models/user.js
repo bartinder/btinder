@@ -5,6 +5,7 @@ const validator = require('validator');
  mongoose.promise = Promise
 
 const userSchema = new mongoose.Schema({
+	
 	email: {
 	  type: String,
 	  unique: [true, "Email is already in use"],
