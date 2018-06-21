@@ -12,14 +12,8 @@ const Card = props => (
     <p className="card-text">Rating: 5</p>
     <p className="card-text">Demographic: 23-30</p>
   </div>
-<<<<<<< HEAD
   <Button/>
-=======
-  {!props.image && <i className="fa fa-spinner fa-spin" aria-hidden="true" />}
-  <Button 
-     onClick = {props.handleBtnClick}
-  />
->>>>>>> 97f17c0d797cb39cd617fd20ecb5d19ffee79dda
+
 </div>
 );
 
