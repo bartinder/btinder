@@ -3,8 +3,9 @@ const Schema = mongoose.Schema
 const bcrypt = require('bcryptjs');
 const validator = require('validator');
  mongoose.promise = Promise
- 
+
 const userSchema = new mongoose.Schema({
+	
 	email: {
 	  type: String,
 	  unique: [true, "Email is already in use"],
@@ -41,6 +42,16 @@ const userSchema = new mongoose.Schema({
 	  type: Number,
 	  trim: true,
 	  required: [true, "Age field cannot be empty"]
+	},
+
+	likedArray: {
+		type: Array,
+		required: [false, ""]
+	},
+
+	disLikedArray: {
+		type: Array,
+		required: [false, ""]
 	}
 
   });
