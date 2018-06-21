@@ -35,7 +35,7 @@ class Signup extends Component {
           password: this.state.password,
           firstName: this.state.firstName,
           lastName: this.state.lastName,
-          age: this.state.age
+          age: parseInt(this.state.age)
         })
         .then(response => {
           console.log(response);
@@ -151,7 +151,7 @@ class Signup extends Component {
             </div>
             <div className="form-group">
               <div className="col-1 col-ml-auto">
-                <label className="form-label" htmlFor="password">
+                <label className="form-label" htmlFor="age">
                   Age:{" "}
                 </label>
               </div>
@@ -159,7 +159,7 @@ class Signup extends Component {
                 <input
                   className="form-input"
                   placeholder="Age"
-                  type="age"
+                  type="number"
                   name="age"
                   value={this.state.age}
                   onChange={this.handleChange}

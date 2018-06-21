@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:server": "node ./server/server.js",
+    "start:server": "nodemon ./server/server.js",
     "start:client": "cd client && yarn start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
