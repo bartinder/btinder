@@ -4,53 +4,65 @@ const bcrypt = require('bcryptjs');
 const validator = require('validator');
  mongoose.promise = Promise
 
-// Define userSchema
-// const userSchema = new Schema({
-
-// 	username: { type: String, unique: false, required: false },
-// 	password: { type: String, unique: false, required: false }
-
-// })
+//  User Schema is Completed
 
 const userSchema = new mongoose.Schema({
+
 	email: {
 	  type: String,
-	  unique: [true, "Email is already in use"],
-	  required: [true, "Email field cannot be empty"],
+	  unique: [true, "Email Is Already In Use"],
+	  required: [true, "Email Field Cannot Be Empty"],
 	  trim: true,
-	  validate: [validator.isEmail, "invalid email"]
+	  validate: [validator.isEmail, "Invalid Email"]
 	},
   
 	password: {
 	  type: String,
 	  trim: true,
-	  required: [true, "Password field cannot be empty"],
+	  required: [true, "Password Field Cannot Be Empty"],
 	  validate: [
 		password => {
 		  return password && password.length > 6;
 		},
-		"Password need to be greater than 6 characters",
+		"Password Need to be Greater Than 6 Characters",
 	  ],
 	},
   
 	firstName: {
 	  type: String,
 	  trim: true,
-	  required: [false, "First name field cannot be empty"],
+	  required: [true, "First Name Field Cannot Be Empty"],
 	},
   
 	lastName: {
 	  type: String,
 	  trim: true,
-	  required: [false, "Last name field cannot be empty"],
+	  required: [true, "Last Name Field Cannot Be Empty"],
 	},
   
-	notes: [
-	  {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: "Note",
-	  },
-	],
+	age: {
+	  type: Number,
+	  trim: true,
+	  required: [true, "Please Enter Your Age"]
+	},
+
+	likedArray: {
+		type: Array,
+		required: [false, ""]
+	},
+
+	disLikedArray: {
+		type: Array,
+		required: [false, ""]
+	},
+
+	profilePicture: { 
+		type: String,
+		required: [true, "Please Add a Profile Picture"]
+	}
+
+	// Need to add option of profilePicture to be entered as a jpg or png as well!
+
   });
 
 // Define schema methods

@@ -9,7 +9,7 @@ import Home from './pages/home';
 import Dashboard from "./components/dashboard";
 import Discover from "./pages/Discover";
 // import Footer from "./components/Footer";
-import Wrapper from "./components/Wrapper"
+import Wrapper from "./components/Wrapper";
 
 
 class App extends Component {
@@ -20,6 +20,7 @@ class App extends Component {
       email: null,
       firstName: "",
       lastName: "",
+      proiflePicture: "",
       id: null
     }
 
@@ -34,10 +35,10 @@ class App extends Component {
 
   updateUser (userObject) {
     this.setState(userObject)
+    window.location.reload();
   }
 
   
-
   getUser() {
     axios.get('/user/', function(req,res) {
         console.log("is this working?");
@@ -46,15 +47,14 @@ class App extends Component {
       console.log(response.data);
       if (response.data.user) {
         console.log('Get User: There is a user saved in the server session: ');
-
         this.setState({
           loggedIn: true,
           email: response.data.user.email,
           id: response.data.user._id,
           firstName: response.data.user.firstName,
-          lastName: response.data.user.lastName
+          lastName: response.data.user.lastName,
+          profilePicture: response.data.user.profilePicture
         });
-         
         
       } else {
         console.log('Get user: no user');
@@ -67,6 +67,9 @@ class App extends Component {
   }
 
   render() {
+    const imageStyle = {
+      height: "100px"
+    }
     return (
       <Router>
       <div className="App">
@@ -76,7 +79,15 @@ class App extends Component {
           exact path="/"
           component={Home} 
         />
-        
+
+        <Route
+          exact path="/friends"
+          render = {() => 
+            <Home 
+              loggedIn = {this.state.loggedIn}
+          />}
+        />
+
         <Route
           path="/login"
           render={() =>

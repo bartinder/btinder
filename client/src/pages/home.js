@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
-import "./Home.css"
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import "./Home.css";
 // import axios from 'axios'
+import axios from 'axios';
+import { Route, Link, browserHistory } from 'react-router-dom';
 
 class Home extends Component {
-    constructor() {
+    constructor(props) {
         super()
         this.state = {
             redirectTo: null,
@@ -12,18 +14,31 @@ class Home extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleSubmit(event) {
-        this.setState({redirectTo: "/login"})
+    handleSubmit(props) {
+        
+        if (this.props.loggedIn) {
+        this.setState({redirectTo: "/discover"})
+        } else {this.setState({redirectTo: "/login"})}
+    //    console.log(props.loggedIn)
+        
     }
 
 
     render() {
         const imageStyle = {
-            width: 400
+            width: 500,
+            height: 150
         }
-        if (this.state.redirectTo) {
-            return <Redirect to={{ pathname: this.state.redirectTo }} />
-        } else {
+        const buttonStyle = {
+            height: 40
+        }
+        const loggedIn = this.props.loggedIn
+        console.log(loggedIn);
+        // if (this.state.redirectTo) {
+        //     return <Redirect to={{ pathname: this.state.redirectTo }} />
+        // } else {
+
+        if (loggedIn) {
         return (
             <div className="wrapper justify-content">
               <div className="bg">
@@ -39,9 +54,10 @@ class Home extends Component {
               </div>
 
             </div>
-        )
+               )
     }
-    }
+  }
 }
 
-export default Home
+
+export default Home;
