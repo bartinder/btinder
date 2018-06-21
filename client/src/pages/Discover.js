@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import Card from "../components/Card";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
+import Wrapper from "../components/Wrapper";
+import Navbar2 from "../components/Navbar2";
 
 class Discover extends Component {
   state = {
@@ -52,13 +54,18 @@ class Discover extends Component {
   render() {
     return (
       <div>
-        <Card image={this.state.image} handleBtnClick={this.handleBtnClick}>
+        <Navbar2 />
+
+          <Card image={this.state.image} handleBtnClick={this.handleBtnClick}>
           
-        </Card>
+          </Card>
+          <Footer/>
+
+      
+
+      </div>  
         
-        <Footer/>
-        
-      </div>
+
     );
   }
 }

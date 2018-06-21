@@ -3,9 +3,9 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // components
 import Signup from './components/sign-up';
-import LoginForm from './components/login-form';
+import LoginForm from './pages/login-form';
 import Navbar from './components/navbar';
-import Home from './components/home';
+import Home from './pages/home';
 import Dashboard from "./components/dashboard";
 import Discover from "./pages/Discover";
 // import Footer from "./components/Footer";
@@ -71,13 +71,6 @@ class App extends Component {
       <Router>
       <div className="App">
       <Wrapper>
-   
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-        {/* greet user if logged in: */}
-        {this.state.loggedIn &&
-          <p>You Are Currently Logged In, {this.state.firstName}  {this.state.lastName}!</p>
-        }
-        {/* Routes to different components */}
 
         <Route
           exact path="/"
