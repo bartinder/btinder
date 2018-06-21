@@ -43,6 +43,7 @@ class Home extends Component {
             <div className="wrapper justify-content">
               <div className="bg">
                 <div>
+                  <Link to="/discover">
                     <button
                     type= "submit"
                     className="btn col-mr-auto"
@@ -50,11 +51,31 @@ class Home extends Component {
                     >
                     Click to Begin!
                     </button> 
+                  </Link>
                 </div>
               </div>
 
             </div>
-               )
+               )}
+            else {
+                return (
+                    <div className="wrapper justify-content">
+                      <div className="bg">
+                        <div>
+                          <Link to="/login">
+                            <button
+                            type= "submit"
+                            className="btn col-mr-auto"
+                            onClick={this.handleSubmit}
+                            >
+                            Click to Begin!
+                            </button> 
+                          </Link>
+                        </div>
+                      </div>
+        
+                    </div>
+                       )
     }
   }
 }
