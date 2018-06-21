@@ -122,7 +122,9 @@ render() {
 		// height:
 	}
 	const imageStyle = {
-		height: "200px"
+		height: "200px",
+		position: "absolute",
+		marginLeft: "40%"
 	}
 	if (this.state.redirectTo) {
 		return <Redirect to={{ pathname: this.state.redirectTo }} />
@@ -233,7 +235,7 @@ render() {
 					)}
 			
 				
-				{!this.state.profilePicture ? (
+				{!this.state.profilePicture && (
 				<div className="facebook">
 					<FacebookLoginWithButton
 						appId="2035101990142770"
@@ -251,10 +253,11 @@ render() {
 						onMouseEnter={this.mouseEnter}
 					/>
 				</div>
-				) : (<img src= {this.state.profilePicture} style={imageStyle}/>)}
+				)}
 				</div>
 				<div className="form-group ">
 					<div className="col-7"></div>
+					{this.state.profilePicture && (<img src= {this.state.profilePicture} style={imageStyle}/>)}
 					<button
 						className="btn btn-primary col-1 col-mr-auto"
 						onClick={this.handleSubmit}
