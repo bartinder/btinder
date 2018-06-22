@@ -37,7 +37,7 @@ class Discover extends Component {
   render() {
     return (
       <div>
-        <Navbar2 />
+        {/* <Navbar2 /> */}
 
           <Card image={this.state.image} handleBtnClick={this.handleBtnClick}>
           
