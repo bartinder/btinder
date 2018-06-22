@@ -74,6 +74,21 @@ class App extends Component {
       <Router>
       <div className="App">
       <Wrapper>
+        
+        <Navbar 
+        updateUser={this.updateUser} 
+        loggedIn={this.state.loggedIn} 
+        src={this.state.profilePicture}
+        firstName={this.state.firstName}
+        lastName={this.state.lastName}/>
+        {/* greet user if logged in: */}
+        {/* {this.state.loggedIn &&
+          // <div style={{height: "10px", backgroundColor: ""}}>
+          //   <p>
+          //   </p>
+          // </div>
+        } */}
+        {/* Routes to different components */}
 
         <Route
           exact path="/"

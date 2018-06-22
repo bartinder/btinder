@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import FacebookLoginWithButton from "../components/Facebook/facebook-with-button";
+import "./sign-up.css"
 
 
 class Signup extends Component {
@@ -132,11 +133,8 @@ render() {
 	return (
 		<div className="SignupForm">
 			<h4>Sign Up</h4>
-			<form className="form-horizontal">
+			<form className="form-horizontal signup-form">
 				<div className="form-group">
-					<div className="col-1 col-ml-auto">
-						<label className="form-label" htmlFor="firstName">First Name: </label>
-					</div>
 					<div className="col-3 col-mr-auto">
 						<input className="form-input"
 							type="text"
@@ -149,9 +147,6 @@ render() {
 					</div>
 				</div>
 				<div className="form-group">
-					<div className="col-1 col-ml-auto">
-						<label className="form-label" htmlFor="lastName">Last Name: </label>
-					</div>
 					<div className="col-3 col-mr-auto">
 						<input className="form-input"
 							type="text"
@@ -164,9 +159,6 @@ render() {
 					</div>
 				</div>
 				<div className="form-group">
-					<div className="col-1 col-ml-auto">
-						<label className="form-label" htmlFor="username">Email: </label>
-					</div>
 					<div className="col-3 col-mr-auto">
 						<input className="form-input"
 							type="text"
@@ -179,9 +171,6 @@ render() {
 					</div>
 				</div>
 				<div className="form-group">
-					<div className="col-1 col-ml-auto">
-						<label className="form-label" htmlFor="password">Password: </label>
-					</div>
 					<div className="col-3 col-mr-auto">
 						<input className="form-input"
 							placeholder="Password"
@@ -193,9 +182,6 @@ render() {
 					</div>
 				</div>
 				<div className="form-group">
-					<div className="col-1 col-ml-auto">
-						<label className="form-label" htmlFor="password">Age: </label>
-					</div>
 					<div className="col-3 col-mr-auto">
 						<input className="form-input"
 							placeholder="Age"
@@ -207,9 +193,6 @@ render() {
 					</div>
 				</div>
 				<div className="form-group">
-					<div className="col-1 col-ml-auto" style={{marginLeft:'30em'}}>
-						<label className="form-label" htmlFor="avatar">Profile Picture: </label>
-					</div>
 					{!this.state.profilePicture ? (
 					
 					<div className="col-3 col-mr-auto" style={{marginRight: 0}}>
@@ -259,7 +242,7 @@ render() {
 					<div className="col-7"></div>
 					{this.state.profilePicture && (<img src= {this.state.profilePicture} style={imageStyle}/>)}
 					<button
-						className="btn btn-primary col-1 col-mr-auto"
+						className="btn btn-primary click"
 						onClick={this.handleSubmit}
 						type="submit"
 					>Sign up</button>
