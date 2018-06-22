@@ -247,7 +247,7 @@ render() {
 						type="submit"
 					>Sign up</button>
 				</div>
-				<div>
+				<div style={{color:"black"}}>
 				{this.state.errorMessage}
 				</div>
 			</form>
