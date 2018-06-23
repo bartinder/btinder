@@ -6,7 +6,11 @@ import API from "../utils/API";
 class Discover extends Component {
   constructor() {
     super();
-    this.state = { bars: [] };
+    this.state = {
+      profilePicture: null,
+      bars: []
+    }
+
 
     this.handleBtnClick = this.handleBtnClick.bind(this);
   }
@@ -34,6 +38,7 @@ class Discover extends Component {
     } else {
       // We are just skipping, need to render the next bar
     }
+    console.log(this.props);
   }
 
   render() {
@@ -41,6 +46,7 @@ class Discover extends Component {
       <div className="discover">
         <Card {...this.state.bars[0]} handleBtnClick={this.handleBtnClick} />
         <Footer />
+
       </div>
     );
   }
