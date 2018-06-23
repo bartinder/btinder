@@ -8,9 +8,9 @@ class Discover extends Component {
     super();
     this.state = {
       profilePicture: null,
-      bars: []
-    }
-
+      bars: [],
+      count: 0
+    };
 
     this.handleBtnClick = this.handleBtnClick.bind(this);
   }
@@ -26,17 +26,19 @@ class Discover extends Component {
       .catch(err => console.log(err));
   }
 
-  handleBtnClick(event) {
+  handleBtnClick(event, i) {
     console.log(
       "data-value of button: ",
       event.target.getAttribute("data-value")
     );
     if (event.target.getAttribute("data-value") === "like") {
-      // push JSON object into liked array?
+      //user.likedArray.push(this.state.bars[this.state.count].name);
+      this.setState({ count: this.state.count + 1 });
     } else if (event.target.getAttribute("data-value") === "dislike") {
-      // push JSON object into disliked array?
+      //user.dislikedArray.push(this.state.bars[this.state.count].name);
+      this.setState({ count: this.state.count + 1 });
     } else {
-      // We are just skipping, need to render the next bar
+      this.setState({ count: this.state.count + 1 });
     }
     console.log(this.props);
   }
@@ -44,9 +46,11 @@ class Discover extends Component {
   render() {
     return (
       <div className="discover">
-        <Card {...this.state.bars[0]} handleBtnClick={this.handleBtnClick} />
+        <Card
+          {...this.state.bars[this.state.count]}
+          handleBtnClick={this.handleBtnClick}
+        />
         <Footer />
-
       </div>
     );
   }
