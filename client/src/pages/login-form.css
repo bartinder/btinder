@@ -20,14 +20,14 @@
 }
 
 .btn-login.col-mr-auto {
-  background-color: #62107F;
-  border-color: #62107F;
+  background-color: #4527a0;
+  border-color: #4527a0;
   color: white;
 }
 
 .btn-login.col-mr-auto:hover {
-  background-color: #62107F;
-  border-color: #62107F;
+  background-color: #512da8;
+  border-color: #512da8;
   color: white;
 }
 

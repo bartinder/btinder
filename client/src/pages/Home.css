@@ -22,14 +22,14 @@
   position: absolute;
   top: 35%;
   left: 45%;
-  background-color: #62107F;
-  border-color: #62107F;
+  background-color: #4527a0;
+  border-color: #4527a0;
   color: white;
 }
 
 .btn.col-mr-auto:hover {
-  background-color: #62107F;
-  border-color: #62107F;
+  background-color: #512da8;
+  border-color: #512da8;
   color: white;
 }
 
@@ -43,8 +43,13 @@
     position: absolute;
     top: 45%;
     left: 40%;
-    background-color: #62107F;
-    border-color: #62107F;
+    background-color: #4527a0;
+    border-color: #4527a0;
     color: white;
+  }
+
+  .btn.col-mr-auto.home:hover {
+    background-color: #512da8;
+    border-color: #512da8;
   }
 }
