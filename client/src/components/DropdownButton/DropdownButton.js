@@ -24,14 +24,8 @@ export default class DropdownButton extends React.Component {
   logout(event) {
     event.preventDefault()
     console.log('logging out')
-    axios.post('/user/logout').then(response => {
+    axios.post('/api/users/logout').then(response => {
       console.log(response.data)
-    //   if (response.status === 200) {
-    //     this.props.updateUser({
-    //       loggedIn: false,
-    //       email: null
-    //     })
-    //   }
       window.location.assign("/login");
 
     }).catch(error => {
