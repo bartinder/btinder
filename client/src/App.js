@@ -10,6 +10,7 @@ import Dashboard from "./components/dashboard";
 import Discover from "./pages/Discover";
 // import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+import SearchFriend from "./pages/SearchFriend";
 
 
 class App extends Component {
@@ -128,7 +129,9 @@ class App extends Component {
           path="/discover"
           component={Discover}
         />
-
+        <Route path="/search"
+        component={SearchFriend}
+        />
         </Wrapper>
       </div>
     </Router>
