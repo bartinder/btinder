@@ -65,6 +65,19 @@ router.post(
         res.send(userInfo);
     }
 )
+router.get('/current', (req, res, next) => {
+    
+    if (req.user) {
+        // res.json({ user: req.user, message: "this is the user object passed from '/'"});
+        User.findOne(
+            { _id: req.user._id }, function(err, user) {
+                console.log(user);
+                res.json({user: user});
+            })
+    } else {
+        res.json({ user: null })
+    }
+})
 
 router.get('/', (req, res, next) => {
     console.log('===== user!!======')
