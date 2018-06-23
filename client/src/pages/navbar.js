@@ -50,8 +50,6 @@ class Navbar extends Component {
                                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
                                 <span className="text-secondary"></span>
                                     </Link>
-
-                                <img src={this.props.src} className="App-logo" alt="logo" />
                                 
                             </section>
                         ) : (

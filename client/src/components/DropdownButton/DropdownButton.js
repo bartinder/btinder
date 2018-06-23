@@ -4,6 +4,7 @@ import {Glyphicon, Button} from "react-bootstrap"
 import "./DropDownButton.css"
 import {Link} from "react-router-dom"
 import axios from "axios"
+import ProfilePicture from "../ProfilePicture/ProfilePicture"
 
 export default class DropdownButton extends React.Component {
   constructor(props) {
@@ -40,6 +41,9 @@ export default class DropdownButton extends React.Component {
   }
 
   render() {
+    const imageStyle = {
+        height: "50px"
+    }
     return (
     <div>
       <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -47,11 +51,9 @@ export default class DropdownButton extends React.Component {
             <Glyphicon glyph="align-justify" />
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem header>Header</DropdownItem>
+          <DropdownItem header><img alt="profile" src={this.props.src} style={imageStyle}/>{this.props.firstName} {this.props.lastName}</DropdownItem>
           <DropdownItem><Link to="/"></Link>My Profile</DropdownItem>
           <DropdownItem onClick={this.logout}>Logout</DropdownItem>
-          {/* <DropdownItem divider /> */}
-          {/* <DropdownItem>Another Action</DropdownItem> */}
         </DropdownMenu>
       </ButtonDropdown>
     </div>

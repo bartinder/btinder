@@ -6,7 +6,11 @@ import API from "../utils/API";
 class Discover extends Component {
   constructor() {
     super();
-    this.state = { bars: [], count: 0 };
+    this.state = {
+      profilePicture: null,
+      bars: [],
+      count: 0
+    };
 
     this.handleBtnClick = this.handleBtnClick.bind(this);
   }
@@ -36,6 +40,7 @@ class Discover extends Component {
     } else {
       this.setState({ count: this.state.count + 1 });
     }
+    console.log(this.props);
   }
 
   render() {

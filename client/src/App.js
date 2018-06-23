@@ -11,6 +11,7 @@ import Discover from "./pages/Discover";
 // import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import SearchFriend from "./pages/SearchFriend";
+import Footer from "./components/Footer/Footer"
 
 
 class App extends Component {
@@ -91,10 +92,17 @@ class App extends Component {
         } */}
         {/* Routes to different components */}
 
+        {this.state.loggedIn ? (
+        <Route
+          exact path="/"
+          component={Discover} 
+        />
+        ) : (
         <Route
           exact path="/"
           component={Home} 
         />
+        )}
 
         <Route
           exact path="/friends"
@@ -133,6 +141,7 @@ class App extends Component {
         component={SearchFriend}
         />
         </Wrapper>
+        {this.state.loggedIn && (<Footer src={this.state.profilePicture} firstName={this.state.firstName} lastName={this.state.lastName} />)}
       </div>
     </Router>
     );
