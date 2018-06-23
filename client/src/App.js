@@ -43,7 +43,7 @@ class App extends Component {
 
   
   getUser() {
-    axios.get('/user/', function(req,res) {
+    axios.get('/api/users/current', function(req,res) {
         console.log("is this working?");
       }).then(response => {
       console.log('Get user response: ');
