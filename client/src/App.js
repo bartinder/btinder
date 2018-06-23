@@ -11,7 +11,8 @@ import Discover from "./pages/Discover";
 // import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import SearchFriend from "./pages/SearchFriend";
-import Footer from "./components/Footer/Footer"
+import Footer from "./components/Footer/Footer";
+import Profile from "./pages/profile";
 
 
 class App extends Component {
@@ -82,15 +83,8 @@ class App extends Component {
         loggedIn={this.state.loggedIn} 
         src={this.state.profilePicture}
         firstName={this.state.firstName}
-        lastName={this.state.lastName}/>
-        {/* greet user if logged in: */}
-        {/* {this.state.loggedIn &&
-          // <div style={{height: "10px", backgroundColor: ""}}>
-          //   <p>
-          //   </p>
-          // </div>
-        } */}
-        {/* Routes to different components */}
+        lastName={this.state.lastName}
+        />
 
         {this.state.loggedIn ? (
         <Route
@@ -103,11 +97,22 @@ class App extends Component {
           component={Home} 
         />
         )}
+        <Route
+          path="/profile"
+          render = {() => 
+            <Profile
+              updateUser = {this.updateUser}
+              loggedIn = {this.state.loggedIn}
+              firstName = {this.state.firstName}
+              lastName = {this.state.lastName}
+              email = {this.state.email}
+          />}
+        />
 
         <Route
           exact path="/friends"
           render = {() => 
-            <Home 
+            <SearchFriend
               loggedIn = {this.state.loggedIn}
           />}
         />

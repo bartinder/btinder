@@ -4,7 +4,6 @@ import {Glyphicon, Button} from "react-bootstrap"
 import "./DropDownButton.css"
 import {Link} from "react-router-dom"
 import axios from "axios"
-import ProfilePicture from "../ProfilePicture/ProfilePicture"
 
 export default class DropdownButton extends React.Component {
   constructor(props) {
@@ -52,7 +51,7 @@ export default class DropdownButton extends React.Component {
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem header><img alt="profile" src={this.props.src} style={imageStyle}/>{this.props.firstName} {this.props.lastName}</DropdownItem>
-          <DropdownItem><Link to="/"></Link>My Profile</DropdownItem>
+          <DropdownItem><a href="/profile">My Profile</a></DropdownItem>
           <DropdownItem onClick={this.logout}>Logout</DropdownItem>
         </DropdownMenu>
       </ButtonDropdown>
