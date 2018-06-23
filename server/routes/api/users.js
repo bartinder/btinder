@@ -5,17 +5,18 @@ const db = require("../../database/models")
 const usersController = require("../../controllers/usersController");
 
 // Matches with "/api/users"
-// router.route("/api/users")
-//   .get(function(req,res) {
-//       db.User
-//         .find(req.query)
-//         .then(dbModel => res.json(dbModel))
-//         .catch(err => res.status(422).json(err));
-//   })
+router.route("/api/users")
+  .get(function(req,res) {
+      db.User
+        .find(req.query)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+  })
 
 router.route("/")
   .get(usersController.findAll)
   .post(usersController.create);
+
 
   router.route("/:id")
     .get(usersController.findByID)
