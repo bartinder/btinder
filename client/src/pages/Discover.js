@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import API from "../utils/API";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
-import Wrapper from "../components/Wrapper";
-import Navbar2 from "../components/Navbar2";
+
 
 class Discover extends Component {
   constructor() {
@@ -36,16 +34,11 @@ class Discover extends Component {
 
   render() {
     return (
-      <div>
-        {/* <Navbar2 /> */}
-
+      <div className="discover">
           <Card image={this.state.image} handleBtnClick={this.handleBtnClick}>
           
           </Card>
-          <Footer/>
-
-      
-
+          <Footer/>  
       </div>  
         
 

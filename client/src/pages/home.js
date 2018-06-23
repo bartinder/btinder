@@ -65,7 +65,7 @@ class Home extends Component {
                           <Link to="/login">
                             <button
                             type= "submit"
-                            className="btn col-mr-auto"
+                            className="btn col-mr-auto home"
                             onClick={this.handleSubmit}
                             >
                             Click to Begin!

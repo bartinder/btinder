@@ -131,11 +131,11 @@ render() {
 		return <Redirect to={{ pathname: this.state.redirectTo }} />
 	} else {
 	return (
-		<div className="SignupForm">
-			<h4>Sign Up</h4>
+		<div className="bg SignupForm">
+			{/* <h4>Sign Up</h4> */}
 			<form className="form-horizontal signup-form">
-				<div className="form-group">
-					<div className="col-3 col-mr-auto">
+				<div className="form-group signup-form">
+					<div className="col col-mr-auto">
 						<input className="form-input"
 							type="text"
 							id="firstName"
@@ -146,8 +146,8 @@ render() {
 						/>
 					</div>
 				</div>
-				<div className="form-group">
-					<div className="col-3 col-mr-auto">
+				<div className="form-group signup-form">
+					<div className="col col-mr-auto">
 						<input className="form-input"
 							type="text"
 							id="lastName"
@@ -158,8 +158,8 @@ render() {
 						/>
 					</div>
 				</div>
-				<div className="form-group">
-					<div className="col-3 col-mr-auto">
+				<div className="form-group signup-form">
+					<div className="col col-mr-auto">
 						<input className="form-input"
 							type="text"
 							id="email"
@@ -170,8 +170,8 @@ render() {
 						/>
 					</div>
 				</div>
-				<div className="form-group">
-					<div className="col-3 col-mr-auto">
+				<div className="form-group signup-form">
+					<div className="col col-mr-auto">
 						<input className="form-input"
 							placeholder="Password"
 							type="password"
@@ -181,8 +181,8 @@ render() {
 						/>
 					</div>
 				</div>
-				<div className="form-group">
-					<div className="col-3 col-mr-auto">
+				<div className="form-group signup-form">
+					<div className="col col-mr-auto">
 						<input className="form-input"
 							placeholder="Age"
 							type="number"
@@ -192,10 +192,10 @@ render() {
 						/>
 					</div>
 				</div>
-				<div className="form-group">
+				<div className="form-group signup-form">
 					{!this.state.profilePicture ? (
 					
-					<div className="col-3 col-mr-auto" style={{marginRight: 0}}>
+					<div className="col col-mr-auto" style={{marginRight: 0}}>
 						<input className="form-input"
 							placeholder="Picture"
 							type="file"
@@ -206,7 +206,7 @@ render() {
 						/>
 					</div>
 					) : (
-					<div className="col-3 col-mr-auto">
+					<div className="col col-mr-auto">
 						<input className="form-input"
 							placeholder="Facebook Image Chosen!"
 							type="text"
@@ -219,6 +219,7 @@ render() {
 			
 				
 				{!this.state.profilePicture && (
+        <div className="form-group signup-form">  
 				<div className="facebook">
 					<FacebookLoginWithButton
 						appId="2035101990142770"
@@ -236,13 +237,14 @@ render() {
 						onMouseEnter={this.mouseEnter}
 					/>
 				</div>
+        </div>
 				)}
 				</div>
-				<div className="form-group ">
+				<div className="form-group signup-form ">
 					<div className="col-7"></div>
 					{this.state.profilePicture && (<img src= {this.state.profilePicture} style={imageStyle}/>)}
 					<button
-						className="btn btn-primary click"
+						className="btn click"
 						onClick={this.handleSubmit}
 						type="submit"
 					>Sign up</button>

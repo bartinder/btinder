@@ -72,7 +72,7 @@ class LoginForm extends Component {
             return (
               <div className="bg justify-content">
                 <div>
-                    <form className="form-horizontal">
+                    <form className="form-horizontal login">
                         <div className="form-group">
                             <div className="col-ml-auto">
                                 <label className="form-label" htmlFor="username"></label>

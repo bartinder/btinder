@@ -1,0 +1,71 @@
+.bg {
+    /* The image used */
+    background-image: url("../pictures/homeBackground.jpg");
+
+    /* Full height */
+    height: 700px; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.form-horizontal.signup-form {
+color: white;
+position: absolute;
+top: 10%;
+left: 38%;
+}
+
+.form-group.signup-form {
+  width: 350px;
+}
+
+.form-group:focus {
+  border-color: black;
+}
+
+.btn.click {
+background-color: #62107F;
+border-color: #62107F;
+color: white;
+position: absolute;
+top: 95%;
+left: 77%;
+}
+
+.btn.click:hover {
+background-color: #62107F;
+border-color: #62107F;
+color: white;
+}
+
+@media (max-width: 670px) { 
+  .bg {
+    width: 100%;
+    height: 500px;
+  }
+
+  .form-horizontal.signup-form {
+    color: white;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    }
+
+    .form-group.signup-form {
+      width: 300px;
+    }
+
+    .btn.click {
+      background-color: #62107F;
+      border-color: #62107F;
+      color: white;
+      position: absolute;
+      top: 95%;
+      left: 75%;
+      }
+
+}
