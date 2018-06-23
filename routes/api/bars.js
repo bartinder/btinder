@@ -121,7 +121,6 @@ function getBars(req, res) {
         if (err) {
           return err;
         } else if (response) {
-          console.log(i);
           const barjson = JSON.parse(body);
           let barObj = {
             name: barjson.candidates[0].name,
