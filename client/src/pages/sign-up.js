@@ -242,7 +242,7 @@ render() {
 				</div>
 				<div className="form-group signup-form ">
 					<div className="col-7"></div>
-					{this.state.profilePicture && (<img src= {this.state.profilePicture} style={imageStyle}/>)}
+					{/* {this.state.profilePicture && (<img src= {this.state.profilePicture} style={imageStyle}/>)} */}
 					<button
 						className="btn click"
 						onClick={this.handleSubmit}

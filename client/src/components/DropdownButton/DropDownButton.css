@@ -1,0 +1,12 @@
+.dropdown-item {
+font-size: 15px;
+padding: 0;
+width: fit-content;
+color: blue
+}
+
+.dropdown-header {
+font-size: 15px;
+padding: 0;
+width: fit-content
+}

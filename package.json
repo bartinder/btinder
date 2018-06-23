@@ -15,9 +15,12 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
+    "reactstrap": "^6.1.0",
+    "request": "^2.87.0",
     "semantic-ui-react": "^0.81.1",
     "spectre.css": "^0.5.0",
     "validator": "^10.3.0"
