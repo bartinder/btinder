@@ -142,9 +142,7 @@ class App extends Component {
           path="/discover"
           component={Discover}
         />
-        <Route path="/search"
-        component={SearchFriend}
-        />
+        
         </Wrapper>
         {this.state.loggedIn && (<Footer src={this.state.profilePicture} firstName={this.state.firstName} lastName={this.state.lastName} />)}
       </div>
