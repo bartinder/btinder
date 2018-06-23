@@ -116,25 +116,36 @@ function getBars(req, res) {
   const barArray = [];
 
   for (i = 0; i < linkArray.length; i++) {
-    request(linkArray[i], function(err, res, body) {
-      if (err) {
-        return err;
-      } else if (res) {
-        console.log(typeof body);
-        const barjson = JSON.parse(body);
-        let barObj = {
-          name: barjson.candidates[0].name,
-          address: barjson.candidates[0].formatted_address,
-          pic: picArray[i]
-        };
-        if (typeof barjson.candidates[0].opening_hours !== "undefined") {
-          barObj.name = barjson.candidates[0].opening_hours.open_now;
+    (function(i) {
+      request(linkArray[i], function(err, response, body) {
+        if (err) {
+          return err;
+        } else if (response) {
+          console.log(i);
+          const barjson = JSON.parse(body);
+          let barObj = {
+            name: barjson.candidates[0].name,
+            address: barjson.candidates[0].formatted_address,
+            pic: picArray[i]
+          };
+          if (typeof barjson.candidates[0].opening_hours !== "undefined") {
+            barObj.open = barjson.candidates[0].opening_hours.open_now;
+          } else {
+            barObj.open = "Unknowns";
+          }
+          if (typeof barjson.candidates[0].rating !== "undefined") {
+            barObj.rating = barjson.candidates[0].rating;
+          } else {
+            barObj.rating = "N/A";
+          }
+          barArray.push(barObj);
+          if (barArray.length === linkArray.length) {
+            res.json(barArray);
+          }
         }
-        barArray.push(barObj);
-      }
-    });
+      });
+    })(i);
   }
-  res.json(barArray);
 
   console.log(barArray);
 }
