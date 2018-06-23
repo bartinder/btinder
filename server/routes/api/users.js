@@ -2,7 +2,7 @@
 
 const router = require("express").Router();
 const db = require("../../database/models")
-// const booksController = require("../../controllers/booksController");
+const usersController = require("../../controllers/usersController");
 
 // Matches with "/api/users"
 router.route("/api/users")
@@ -13,15 +13,14 @@ router.route("/api/users")
         .catch(err => res.status(422).json(err));
   })
 
+router.route("/search")
+  .get(usersController.findAll)
+  .post(usersController.create);
 
-
+  router.route("/search/:id")
+    .get(usersController.findByID)
+    .put(usersController.update)
+    .delete(usersController.remove);
   
-
-// Matches with "/api/books/:id"
-// router
-//   .route("/:id")
-//   .get(booksController.findById)
-//   .put(booksController.update)
-//   .delete(booksController.remove);
 
 module.exports = router;
