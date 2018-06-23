@@ -1,0 +1,60 @@
+.bg {
+      /* The image used */
+      background-image: url("../pictures/homeBackground.jpg");
+
+      /* Full height */
+      height: 525px; 
+  
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+}
+
+.form-horizontal.login {
+  color: white;
+  position: absolute;
+  top:35%;
+  left:42%;
+}
+
+.btn-login.col-mr-auto {
+  background-color: #62107F;
+  border-color: #62107F;
+  color: white;
+}
+
+.btn-login.col-mr-auto:hover {
+  background-color: #62107F;
+  border-color: #62107F;
+  color: white;
+}
+
+.signup {
+  color: white;
+  position: absolute;
+  top: 62%;
+  left: 42%;
+}
+
+@media (max-width: 670px) { 
+  .bg {
+    width: 100%;
+    height: 500px;
+  }
+
+  .form-horizontal.login {
+    color: white;
+    position: absolute;
+    top:30%;
+    left:25%;
+  }
+
+  .signup {
+    color: white;
+    position: absolute;
+    top: 60%;
+    left: 25%;
+  }
+}

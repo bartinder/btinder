@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // components
-import Signup from './components/sign-up';
-import LoginForm from './components/login-form';
-import Navbar from './components/navbar';
-import Home from './components/home';
+import Signup from './pages/sign-up';
+import LoginForm from './pages/login-form';
+import Navbar from './pages/navbar';
+import Home from './pages/home';
 import Dashboard from "./components/dashboard";
 import Discover from "./pages/Discover";
 // import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+import SearchFriend from "./pages/SearchFriend";
 
 
 class App extends Component {
@@ -128,7 +129,9 @@ class App extends Component {
           path="/discover"
           component={Discover}
         />
-
+        <Route path="/search"
+        component={SearchFriend}
+        />
         </Wrapper>
       </div>
     </Router>

@@ -6,7 +6,7 @@ const validator = require('validator');
 
 //  User Schema is Completed
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
 
 	email: {
 	  type: String,
@@ -58,7 +58,7 @@ const userSchema = new mongoose.Schema({
 
 	profilePicture: { 
 		type: String,
-		required: [true, "Please Add a Profile Picture"]
+		required: [false, "Please Add a Profile Picture"]
 	}
 
 	// Need to add option of profilePicture to be entered as a jpg or png as well!

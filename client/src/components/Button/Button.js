@@ -8,8 +8,7 @@ const Button = (props) => (
     <button onClick={props.onClick} data-value="dislike" id="dislike" type="button" className="btn btn-default" {...props}><span data-value="dislike" className="fas fa-thumbs-down"></span></button>
     <button onClick={props.onClick} data-value="like" id="like" type="button" className="btn btn-default" {...props}><span data-value="like" className="fas fa-thumbs-up"></span></button>
   </div>
-  );
-  
-  export default Button;
 
+);
 
+export default Button;

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import API from "../utils/API";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 
@@ -38,9 +37,8 @@ class Discover extends Component {
 
   render() {
     return (
-      <div>
-        <Card handleBtnClick={this.handleBtnClick} />
-
+      <div className="discover">
+        <Card image={this.state.image} handleBtnClick={this.handleBtnClick} />
         <Footer />
       </div>
     );
