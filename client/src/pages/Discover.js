@@ -6,7 +6,9 @@ import API from "../utils/API";
 class Discover extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      profilePicture: null
+    };
 
     this.handleBtnClick = this.handleBtnClick.bind(this);
   }
@@ -34,13 +36,14 @@ class Discover extends Component {
     } else {
       // We are just skipping, need to render the next bar
     }
+    console.log(this.props);
   }
 
   render() {
     return (
       <div className="discover">
         <Card image={this.state.image} handleBtnClick={this.handleBtnClick} />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }

@@ -35,8 +35,6 @@ class LoginForm extends Component {
             .post('/user/login', {
                 email: this.state.email,
                 password: this.state.password
-                // firstName: this.state.firstName,
-                // lastName: this.state.lastname
             })
             .then(response => {
                 console.log('login response: ')
@@ -109,15 +107,23 @@ class LoginForm extends Component {
                                 onClick={this.handleSubmit}
                                 type="submit">Login</button>
                         </div>
-                        <div>
-                            {this.state.errorMessage}
-                        </div>
                     </form>
+                        {this.state.errorMessage ? (<div><span className="signup">
+                            {this.state.errorMessage}</span>
+                        </div>
+
+                        
+                            ) : (
+                        
+                        <div>
+                            <Link to="/signup">
+                                <span className="signup">Don't have an account? Sign Up</span>
+                            </Link>
+                        </div>)}
+
                 </div>
-                <Link to="/signup">
-                    <span className="signup">Don't have an account? Sign Up</span>
-                </Link>
-              </div>
+            </div>
+        
             )
         }
     }
