@@ -1,34 +1,16 @@
 import React, { Component } from "react";
 // import { Redirect } from 'react-router-dom'
-<<<<<<< HEAD:client/src/components/navbar.js
 import { Route, Link, browserHistory } from "react-router-dom";
 import logo from "../logo.svg";
 import "../App.css";
 import axios from "axios";
-import ProfilePicture from "./ProfilePicture/ProfilePicture";
-
-class Navbar extends Component {
-  constructor(props) {
-    super();
-    this.logout = this.logout.bind(this);
-  }
-
-  // componentDidMount() {
-  //     this.getUser();
-  // }
-=======
-import { Route, Link, browserHistory } from 'react-router-dom'
-import logo from '../logo.svg';
-import '../App.css';
-import axios from 'axios';
 import "./navbar.css";
 
 class Navbar extends Component {
-    constructor() {
-        super()
-        this.logout = this.logout.bind(this)
-    }
->>>>>>> f92240dabc95b8d8cd25ae5756e78877d6521bce:client/src/pages/navbar.js
+  constructor() {
+    super();
+    this.logout = this.logout.bind(this);
+  }
 
   // getUser() {
   //     axios.get("/user")
@@ -54,7 +36,6 @@ class Navbar extends Component {
       });
   }
 
-<<<<<<< HEAD:client/src/components/navbar.js
   render() {
     const loggedIn = this.props.loggedIn;
     console.log("navbar render, props: ");
@@ -63,15 +44,11 @@ class Navbar extends Component {
     return (
       <div>
         <header className="navbar App-header" id="nav-container">
-          <div className="col-4">
+          <div className="col-s4 col-4">
             {loggedIn ? (
               <section className="navbar-section">
-                <Link to="/friends" className="btn btn-link text-secondary">
-                  <span className="text-secondary">Friends</span>
-                </Link>
-
                 <Link to="/discover" className="btn btn-link text-secondary">
-                  <span className="text-secondary">Discover</span>
+                  <span className="text-secondary" />
                 </Link>
 
                 <Link
@@ -79,86 +56,35 @@ class Navbar extends Component {
                   className="btn btn-link text-secondary"
                   onClick={this.logout}
                 >
-                  <span className="text-secondary">Logout</span>
+                  <span className="text-secondary" />
                 </Link>
-                <div className="profilePicture">
-                  <div>
-                    {this.props.firstName} {this.props.lastName}
-                  </div>
-                  <ProfilePicture src={this.props.src} />
-                </div>
               </section>
             ) : (
               <section className="navbar-section">
                 <Link to="/" className="btn btn-link text-secondary">
-                  <span className="text-secondary">Home</span>
+                  <span className="text-secondary" />
                 </Link>
                 <Link to="/login" className="btn btn-link text-secondary">
-                  <span className="text-secondary">Login</span>
+                  <span className="text-secondary" />
                 </Link>
                 <Link to="/signup" className="btn btn-link">
-                  <span className="text-secondary">Sign Up</span>
+                  <span className="text-secondary" />
                 </Link>
               </section>
             )}
           </div>
-          <div className="col-4 col-mr-auto">
+          <div className="col-s4 col-4 col-mr-auto">
             <div id="top-filler" />
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">barTinder</h1>
+            <img
+              src={require("../pictures/logo4.png")}
+              className="App-logo"
+              alt="logo"
+            />
           </div>
         </header>
       </div>
     );
   }
-=======
-    render() {
-        const loggedIn = this.props.loggedIn;
-        console.log('navbar render, props: ')
-        console.log(this.props);
-        
-        return (
-            <div>
-
-                <header className="navbar App-header" id="nav-container">
-                    <div className="col-s4 col-4" >
-                        {loggedIn ? (
-                            <section className="navbar-section">
-                        
-                                <Link to="/discover" className="btn btn-link text-secondary">
-                                    <span className="text-secondary"></span>
-                                    </Link>
-
-                                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                                <span className="text-secondary"></span>
-                                    </Link>
-                                
-                            </section>
-                        ) : (
-                                <section className="navbar-section">
-                                    <Link to="/" className="btn btn-link text-secondary">
-                                        <span className="text-secondary"></span>
-                                        </Link>
-                                    <Link to="/login" className="btn btn-link text-secondary">
-                                    <span className="text-secondary"></span>
-				                        </Link>
-                                    <Link to="/signup" className="btn btn-link">
-                                    <span className="text-secondary"></span>
-				                        </Link>
-                                </section>
-                            )}
-                    </div>
-                    <div className="col-s4 col-4 col-mr-auto">
-                    <div id="top-filler"></div>
-                        <img src={require("../pictures/logo4.png")} className="App-logo" alt="logo" />
-                    </div>
-                </header>
-            </div>
-
-        );
-
-    }
->>>>>>> f92240dabc95b8d8cd25ae5756e78877d6521bce:client/src/pages/navbar.js
 }
 
 export default Navbar;
