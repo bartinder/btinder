@@ -28,8 +28,8 @@ left: 38%;
 }
 
 .btn.click {
-background-color: #62107F;
-border-color: #62107F;
+background-color: #4527a0;
+border-color: #4527a0;
 color: white;
 position: absolute;
 top: 95%;
@@ -37,8 +37,8 @@ left: 77%;
 }
 
 .btn.click:hover {
-background-color: #62107F;
-border-color: #62107F;
+background-color: #512da8;
+border-color: #512da8;
 color: white;
 }
 
@@ -60,12 +60,17 @@ color: white;
     }
 
     .btn.click {
-      background-color: #62107F;
-      border-color: #62107F;
+      background-color: #4527a0;
+      border-color: #4527a0;
       color: white;
       position: absolute;
       top: 95%;
       left: 75%;
       }
+
+    .btn.click:hover {
+      background-color: #512da8;
+      border-color: #512da8;
+    }
 
 }
