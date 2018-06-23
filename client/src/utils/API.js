@@ -10,6 +10,10 @@ export default {
       return axios.get("/api/users" + id);
     },
 
+    searchUser:function(search) {
+      return axios.post("/api/users/search", search );
+    },
+
     deleteUser: function(id) {
       return axios.delete("/api/users/" + id);
     },

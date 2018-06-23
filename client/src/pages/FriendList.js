@@ -3,6 +3,7 @@ import Thumbnail from "../components/Thumbnail";
 import { Container, Row, Col } from "../components/Grid";
 import AddFriend from "../components/AddFriend";
 import InviteFriend from "../components/InviteFriend";
+import API from "../utils/API";
 
 
 const FriendList = props => (
@@ -10,10 +11,10 @@ const FriendList = props => (
     <Container>
       <Row>
         <Col size="xs-2 sm-3">
-          <Thumbnail src={props.image || "https://placehold.it/300x300"} />
+          <Thumbnail src={props.profilePicture || "https://placehold.it/300x300"} />
         </Col>
         <Col size="xs-10 sm-9">
-          <h3>{props.name}</h3>
+          <h3>{props.firstName} {props.lastName}</h3>
           <p>Age: {props.age}</p>
           <AddFriend />
           <InviteFriend />

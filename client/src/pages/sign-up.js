@@ -42,7 +42,7 @@ class Signup extends Component {
 
 		if (this.state.password.length > 7) {
 		//request to server to add a new email/password
-		axios.post('/user/', {
+		axios.post('/api/users/', {
 			email: this.state.email,
 			password: this.state.password,
 			firstName: this.state.firstName,
