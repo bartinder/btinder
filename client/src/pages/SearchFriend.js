@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import SearchForm from "../components/SearchForm";
-import SearchResults from "../components/SearchResults";
 import Container from "../components/Container";
 import Friend from "./Friend";
+import API from "../utils/API";
 
 class SearchFriend extends Component {
 
@@ -11,6 +11,27 @@ class SearchFriend extends Component {
     users: [],
     error: ""
   };
+
+  componentDidMount() {
+    API.getUsers()
+    .then(res => {
+      this.setState({ users: res.data})
+    })
+    .catch(err => console.log(err));
+  }
+
+  handleInputChange = event => {
+    this.setState({ search: event.target.value });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    API.searchUser({ search: this.state.search })
+    .then(res => {
+     this.setState({users: res.data});
+    })
+    .catch(err => this.setState({ error: err.message }));
+};
 
   render() {
     return (
@@ -21,7 +42,8 @@ class SearchFriend extends Component {
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
           />
-          <Friend />
+          <Friend users={this.state.users}/>
+
         </Container>
       </div>
     );

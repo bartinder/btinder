@@ -13,11 +13,12 @@ router.route("/api/users")
         .catch(err => res.status(422).json(err));
   })
 
-router.route("/search")
+router.route("/")
   .get(usersController.findAll)
   .post(usersController.create);
 
-  router.route("/search/:id")
+
+  router.route("/:id")
     .get(usersController.findByID)
     .put(usersController.update)
     .delete(usersController.remove);

@@ -35,6 +35,15 @@ router.post('/', (req, res) => {
     })
 })
 
+router.post("/search", function(req, res) {
+  console.log(req.body);
+  User.find({
+    $or: [{firstName: {$regex: req.body.search}}, {lastName: {$regex: req.body.search}}]
+  }).then (dbData => {
+    res.json(dbData);
+  })
+})
+
 router.post(
     '/login',
     function (req, res, next) {
@@ -60,16 +69,21 @@ router.post(
 router.get('/', (req, res, next) => {
     console.log('===== user!!======')
     console.log(req.user)
-    if (req.user) {
-        // res.json({ user: req.user, message: "this is the user object passed from '/'"});
-        User.findOne(
-            { _id: req.user._id }, function(err, user) {
-                console.log(user);
-                res.json({user: user});
-            })
-    } else {
-        res.json({ user: null })
-    }
+    User.find().then(dbData => {
+      res.json(dbData); 
+    })    
+
+    //Michael commented out the route below. 
+    // if (req.user) {
+    //     // res.json({ user: req.user, message: "this is the user object passed from '/'"});
+    //     User.findOne(
+    //         { _id: req.user._id }, function(err, user) {
+    //             console.log(user);
+    //             res.json({user: user});
+    //         })
+    // } else {
+    //     res.json({ user: null })
+    // }
 })
 
 router.post('/logout', (req, res) => {

@@ -1,30 +1,38 @@
 import React, { Component } from "react";
 import FriendList from "./FriendList";
 import "./Friend.css";
-import friends from "./friends.json";
+import API from "../utils/API";
+
 
 
 class Friend extends Component {
   state= {
-    friends
-  };
+    users: []
+  }
 
 
 render() {
+  console.log(this.props.users)
   return (
-
+    <div>
+      {this.props.users.length ? ( 
     <div className="friendCard">
-      {this.state.friends.map(friend => (
+      {this.props.users.map(user => (
         <FriendList
-        id={friend.id}
-        key={friend.id}
-        name={friend.name}
-        image={friend.image}
-        age={friend.age}
+        id={user._id}
+        key={user._id}
+        profilePicture={user.profilePicture}
+        firstName={user.firstName}
+        lastName={user.lastName}
+        age={user.age}
         />
       ))}
       </div>
-    );
+      ) : (
+        <h3>No Results to Display</h3>
+      )}
+      </div>
+      );
   }
 }
 

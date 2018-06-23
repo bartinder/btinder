@@ -10,12 +10,16 @@ export default {
     return axios.get("/api/bars");
   },
 
+    searchUser:function(search) {
+      return axios.post("/api/users/search", search );
+    },
+
+    deleteUser: function(id) {
+      return axios.delete("/api/users/" + id);
+    },
+
   getUser: function(id) {
     return axios.get("/api/users" + id);
-  },
-
-  deleteUser: function(id) {
-    return axios.delete("/api/users/" + id);
   },
 
   saveUser: function(userData) {

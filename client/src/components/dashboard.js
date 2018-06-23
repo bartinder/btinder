@@ -36,7 +36,7 @@ class Dashboard extends Component {
 
   getUser() {
     axios
-      .get("/user/", function(req, res) {
+      .get("/api/users/", function(req, res) {
         console.log("is this working?");
       })
       .then(response => {
