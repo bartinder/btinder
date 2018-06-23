@@ -50,7 +50,6 @@ class Discover extends Component {
           {...this.state.bars[this.state.count]}
           handleBtnClick={this.handleBtnClick}
         />
-        <Footer />
       </div>
     );
   }
