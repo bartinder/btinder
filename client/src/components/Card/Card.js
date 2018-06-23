@@ -15,9 +15,8 @@ const Card = props => (
             <p className="card-text">Demographic: 23-30</p>
           </div>
           <Button 
-          onClick = {props.handleBtnClick}
+            onClick = {props.handleBtnClick}
           />
-
         </div>
       </div>
     </div>

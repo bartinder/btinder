@@ -13,7 +13,6 @@ button.btn-group.justify-content-around {
   color: black;
   border: black;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-
 }
 
 .btn.btn-default {
@@ -21,7 +20,12 @@ button.btn-group.justify-content-around {
   color: black;
 }
 
+
+
+  /* Media queries ----------------------------------------------- */
+
 @media only screen and (max-width: 670px) {
+
   button.btn-group.justify-content-around {
     background: white;
     padding: 10px;
@@ -42,4 +46,5 @@ button.btn-group.justify-content-around {
     border: none;
     color: black;
   }
+  
 }
