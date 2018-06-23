@@ -6,7 +6,7 @@ import API from "../utils/API";
 class Discover extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = { bars: [] };
 
     this.handleBtnClick = this.handleBtnClick.bind(this);
   }
@@ -16,7 +16,7 @@ class Discover extends Component {
     API.getBars()
       .then(res =>
         this.setState({
-          bars: res
+          bars: res.data
         })
       )
       .catch(err => console.log(err));
@@ -39,7 +39,7 @@ class Discover extends Component {
   render() {
     return (
       <div className="discover">
-        <Card image={this.state.image} handleBtnClick={this.handleBtnClick} />
+        <Card {...this.state.bars[0]} handleBtnClick={this.handleBtnClick} />
         <Footer />
       </div>
     );
