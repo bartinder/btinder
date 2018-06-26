@@ -2,8 +2,8 @@ import React from "react";
 import "./SearchForm.css";
 
 const SearchForm = props => (
-  <form className="search">
-    <div className="form-group">
+  <form className="search mx-auto">
+    <div className="form-group mx-auto">
       <input
         value={props.search}
         onChange={props.handleInputChange}

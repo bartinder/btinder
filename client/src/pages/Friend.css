@@ -1,7 +1,15 @@
 .friendCard {
   border-radius: 2px;
   margin: 1rem;
-  margin-top: 80px;
-  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+  /* margin-top: 50px; */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   text-align: left;
+  width: 400px;
+}
+
+
+@media (max-width: 670px) { 
+  .friendCard {
+    width: 100%;
+  }
 }

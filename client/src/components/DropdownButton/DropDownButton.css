@@ -10,3 +10,11 @@ font-size: 15px;
 padding: 0;
 width: fit-content
 }
+
+.btn.btn-secondary {
+  border: none;
+}
+
+.dropdown-menu.show {
+  width: 100px;
+}

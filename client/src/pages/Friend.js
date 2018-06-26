@@ -16,7 +16,7 @@ render() {
   return (
     <div>
       {this.props.users.length ? ( 
-    <div className="friendCard">
+    <div className="friendCard mx-auto">
       {this.props.users.map(user => (
         <FriendList
         id={user._id}

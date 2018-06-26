@@ -37,7 +37,7 @@ class SearchFriend extends Component {
     return (
       <div>
         <Container style={{ minHeight: "100%" }}>
-          <h1 className="text-center">Search</h1>
+          <h1 className="text-center"></h1>
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
