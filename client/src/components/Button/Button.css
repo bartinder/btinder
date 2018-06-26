@@ -6,9 +6,10 @@ button.btn-group.justify-content-around {
 }
 
 .btn-group.justify-content-around {
-  width: 100%;
+  width: 400px;
   position: absolute;
-  bottom: 40%;
+  top: -15%;
+  left: -2%;
   background-color: white;
   color: black;
   border: black;
@@ -40,6 +41,7 @@ button.btn-group.justify-content-around {
     background-color: white;
     color: black;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    height: 30px;
   }
   
   .btn.btn-default {

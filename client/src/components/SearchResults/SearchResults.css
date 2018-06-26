@@ -1,3 +1,13 @@
 ul.search-results img {
   margin: 0 auto;
 }
+
+.list-group-item {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  width: 400px;
+}
+
+.list-group.search-results {
+  width: 400px;
+}
+
