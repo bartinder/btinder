@@ -3,7 +3,6 @@ import Thumbnail from "../components/Thumbnail";
 import { Container, Row, Col } from "../components/Grid";
 import AddFriend from "../components/AddFriend";
 import InviteFriend from "../components/InviteFriend";
-import API from "../utils/API";
 
 
 const FriendList = props => (
