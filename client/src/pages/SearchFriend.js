@@ -26,6 +26,12 @@ class SearchFriend extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    if (
+      !this.state.search.trim().length
+    ) {
+      this.setState({users: []});
+    return;
+    }
     API.searchUser({ search: this.state.search })
     .then(res => {
      this.setState({users: res.data});
