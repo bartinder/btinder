@@ -1,5 +1,7 @@
 const request = require("request");
 const router = require("express").Router();
+const User = require("../../server/database/models/user");
+const _ = require("lodash");
 
 router.route("/").get(getBars);
 
@@ -114,6 +116,7 @@ function getBars(req, res) {
   ];
 
   const barArray = [];
+  let counter = 0;
 
   for (i = 0; i < linkArray.length; i++) {
     (function(i) {
@@ -122,25 +125,46 @@ function getBars(req, res) {
           return err;
         } else if (response) {
           const barjson = JSON.parse(body);
-          let barObj = {
-            name: barjson.candidates[0].name,
-            address: barjson.candidates[0].formatted_address,
-            pic: picArray[i]
-          };
-          if (typeof barjson.candidates[0].opening_hours !== "undefined") {
-            barObj.open = barjson.candidates[0].opening_hours.open_now;
-          } else {
-            barObj.open = "Unknowns";
-          }
-          if (typeof barjson.candidates[0].rating !== "undefined") {
-            barObj.rating = barjson.candidates[0].rating;
-          } else {
-            barObj.rating = "N/A";
-          }
-          barArray.push(barObj);
-          if (barArray.length === linkArray.length) {
-            res.json(barArray);
-          }
+          User.findOne({ likedArray: barjson.candidates[0].name }).then(
+            function(likedBar) {
+              console.log(_.isEmpty(likedBar));
+              if (_.isEmpty(likedBar)) {
+                User.findOne({
+                  disLikedArray: barjson.candidates[0].name
+                }).then(function(dislikedBar) {
+                  if (_.isEmpty(dislikedBar)) {
+                    let barObj = {
+                      name: barjson.candidates[0].name,
+                      address: barjson.candidates[0].formatted_address,
+                      pic: picArray[i]
+                    };
+                    if (
+                      typeof barjson.candidates[0].opening_hours !== "undefined"
+                    ) {
+                      barObj.open =
+                        barjson.candidates[0].opening_hours.open_now;
+                    } else {
+                      barObj.open = "Unknowns";
+                    }
+                    if (typeof barjson.candidates[0].rating !== "undefined") {
+                      barObj.rating = barjson.candidates[0].rating;
+                    } else {
+                      barObj.rating = "N/A";
+                    }
+                    barArray.push(barObj);
+                    console.log(i);
+                    if (counter + barArray.length === linkArray.length) {
+                      res.json(barArray);
+                    }
+                  } else {
+                    counter++;
+                  }
+                });
+              } else {
+                counter++;
+              }
+            }
+          );
         }
       });
     })(i);
