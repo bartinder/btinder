@@ -1,17 +1,3 @@
 .navbar.App-header {
   height: 100px;
 }
-
-@media (max-width: 670px) { 
-  #nav-container.navbar.App-header  {
-    width: 100%;
-    position: relative;
-    top: 0;
-  }
-
-  .App-logo {
-    margin-left: 0;
-    position: absolute;
-    left: -110px;
-  }
-}
