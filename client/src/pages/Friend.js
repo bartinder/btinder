@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import FriendList from "./FriendList";
 import "./Friend.css";
-import API from "../utils/API";
+
 
 
 

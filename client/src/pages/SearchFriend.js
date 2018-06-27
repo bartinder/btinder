@@ -13,11 +13,11 @@ class SearchFriend extends Component {
   };
 
   componentDidMount() {
-    API.getUsers()
-    .then(res => {
-      this.setState({ users: res.data})
-    })
-    .catch(err => console.log(err));
+    // API.getUsers()
+    // .then(res => {
+    //   this.setState({ users: res.data})
+    // })
+    // .catch(err => console.log(err));
   }
 
   handleInputChange = event => {
