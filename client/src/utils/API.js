@@ -24,5 +24,13 @@ export default {
 
   saveUser: function(userData) {
     return axios.post("/api/users", userData);
+  },
+
+  likeBar: function(bar) {
+    return axios.put("/api/likebar", { bar: bar });
+  },
+
+  dislikeBar: function(bar) {
+    return axios.put("/api/dislikebar", { bar: bar });
   }
 };
