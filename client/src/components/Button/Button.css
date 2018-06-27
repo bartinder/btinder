@@ -1,52 +1,18 @@
-button.btn-group.justify-content-around {
-  background: white;
-  padding: 10px;
-  border: none;
-  color: black;
-}
-
+/* Icon button container */
 .btn-group.justify-content-around {
-  width: 400px;
+  width: 100%;
   position: absolute;
-  top: -15%;
-  left: -2%;
-  background-color: white;
-  color: black;
-  border: black;
+  top: 0;
+  left: 0;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
+/* Icon button container */
 .btn.btn-default {
   border: none;
-  color: black;
 }
 
-
-
-  /* Media queries ----------------------------------------------- */
-
-@media only screen and (max-width: 670px) {
-
-  button.btn-group.justify-content-around {
-    background: white;
-    padding: 10px;
-    border: none;
-    color: black;
-  }
-  
-  .btn-group.justify-content-around {
-    width: 100%;
-    position: absolute;
-    bottom: 10%;
-    background-color: white;
-    color: black;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    height: 30px;
-  }
-  
-  .btn.btn-default {
-    border: none;
-    color: black;
-  }
-  
+/* Icon buttons: skip, dislike, like */
+.btn.btn-default > span {
+  color: #000000;
 }

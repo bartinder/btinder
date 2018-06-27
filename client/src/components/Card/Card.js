@@ -10,6 +10,8 @@ const Card = props => (
           <img className="card-img-top" src={props.pic} alt="Card image cap" />
           <div className="card-body">
             <Button onClick={props.handleBtnClick} />
+            <br />
+            <br />
             <h5 className="card-title">{props.name}</h5>
             <p className="card-text">{props.address}</p>
             <p className="card-text">{props.rating}</p>
