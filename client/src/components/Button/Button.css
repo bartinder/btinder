@@ -1,9 +1,6 @@
 /* Icon button container */
 .btn-group.justify-content-around {
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 /* Icon button container */
