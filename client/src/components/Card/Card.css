@@ -10,9 +10,7 @@
 
 .card-body {
   background-color: #f5f5f5;
-  font-size: 16px;
-  padding: 0;
-  position: relative;
+  font-size: 1rem;
 }
 
 .card-img-top {
