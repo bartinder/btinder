@@ -18,7 +18,8 @@ class Signup extends Component {
 			errorMessage: null,
 			facebookId: "",
 			accessToken: "",
-			profilePicture: null
+			profilePicture: null,
+			phoneNumber: ""
 		
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -48,7 +49,8 @@ class Signup extends Component {
 			firstName: this.state.firstName,
 			lastName: this.state.lastName,
 			age: this.state.age,
-			profilePicture: this.state.profilePicture
+			profilePicture: this.state.profilePicture,
+			phoneNumber: this.state.phoneNumber
 		})
 			.then(response => {
 				console.log(response)
@@ -188,6 +190,17 @@ render() {
 							type="number"
 							name="age"
 							value={this.state.age}
+							onChange={this.handleChange}
+						/>
+					</div>
+				</div>
+				<div className="form-group signup-form">
+					<div className="col col-mr-auto">
+						<input className="form-input"
+							placeholder="919-919-9999"
+							type="phoneNumber"
+							name="phoneNumber"
+							value={this.state.phoneNumber}
 							onChange={this.handleChange}
 						/>
 					</div>

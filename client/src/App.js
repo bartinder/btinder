@@ -97,6 +97,8 @@ class App extends Component {
           component={Home} 
         />
         )}
+
+        {this.state.loggedIn ? (
         <Route
           path="/profile"
           render = {() => 
@@ -107,8 +109,15 @@ class App extends Component {
               lastName = {this.state.lastName}
               email = {this.state.email}
           />}
+        /> 
+        ) : (
+        <Route
+          exact path="/profile"
+          component={Home} 
         />
+        )}
 
+        {this.state.loggedIn? (
         <Route
           exact path="/friends"
           render = {() => 
@@ -116,6 +125,13 @@ class App extends Component {
               loggedIn = {this.state.loggedIn}
           />}
         />
+        ) : (
+        <Route
+          exact path="/friends"
+          component = {Home}
+            
+        />
+        )}
 
         <Route
           path="/login"
@@ -131,13 +147,7 @@ class App extends Component {
               signup={this.signup}
             />}
         />
-        <Route
-          path="/dashboard"
-          render = {() =>
-            <Dashboard
-            loggedIn = {this.props.loggedIn}
-          />}
-        />
+        
         <Route
           path="/discover"
           component={Discover}
