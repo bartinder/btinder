@@ -1,9 +1,19 @@
 /* Icon button container */
 .btn.btn-default {
+  background-color: #000070;
   border: none;
 }
 
 /* Icon buttons: skip, dislike, like */
 .btn.btn-default > span {
+  color: #ffffff;
+}
+
+.btn.btn-default:active span {
   color: #000000;
+}
+
+.btn.btn-default:hover,
+.btn.btn-default:focus {
+  background-color: #7953d2;
 }
