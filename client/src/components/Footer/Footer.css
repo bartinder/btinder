@@ -8,17 +8,13 @@
 
 button {
   background-color: #7953d2;
-  padding: 10px;
+  padding: 0;
   border: none;
 }
 
 button.btn.btn-secondary {
   background-color: #7953d2;
-  padding: 10px;
-}
-
-.row.justify-content-around {
-  height: 50px;
+  padding: 0;
 }
 
 span {
