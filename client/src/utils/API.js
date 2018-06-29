@@ -43,7 +43,7 @@ export default {
     return axios.put("/api/friend", {friend: friend});
   },
 
-  getFriendss: function() {
-    return axios.get("/api/friend");
-  },
+  getFriend: function(id) {
+    return axios.get("/api/friends/" + id);
+  }
 };
