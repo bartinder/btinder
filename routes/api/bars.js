@@ -127,7 +127,6 @@ function getBars(req, res) {
           const barjson = JSON.parse(body);
           User.findOne({ likedArray: barjson.candidates[0].name }).then(
             function(likedBar) {
-              console.log(_.isEmpty(likedBar));
               if (_.isEmpty(likedBar)) {
                 User.findOne({
                   disLikedArray: barjson.candidates[0].name
@@ -152,7 +151,6 @@ function getBars(req, res) {
                       barObj.rating = "N/A";
                     }
                     barArray.push(barObj);
-                    console.log(i);
                     if (counter + barArray.length === linkArray.length) {
                       res.json(barArray);
                     }
@@ -169,8 +167,6 @@ function getBars(req, res) {
       });
     })(i);
   }
-
-  console.log(barArray);
 }
 
 module.exports = router;
