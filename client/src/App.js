@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 // components
 import Signup from './pages/sign-up';
 import LoginForm from './pages/login-form';
@@ -72,9 +72,6 @@ class App extends Component {
   }
 
   render() {
-    const imageStyle = {
-      height: "100px"
-    }
     return (
       <Router>
       <div className="App">

@@ -36,5 +36,14 @@ export default {
 
   dislikeBar: function(bar) {
     return axios.put("/api/dislikebar", { bar: bar });
-  }
+  },
+
+  addFriend: function(friend) {
+    console.log(friend)
+    return axios.put("/api/friend", {friend: friend});
+  },
+
+  getFriendss: function() {
+    return axios.get("/api/friend");
+  },
 };

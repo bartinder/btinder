@@ -9,7 +9,8 @@ class SearchFriend extends Component {
   state = {
     search: "",
     users: [],
-    error: ""
+    error: "",
+    friend: []
   };
 
   componentDidMount() {
@@ -39,6 +40,14 @@ class SearchFriend extends Component {
     .catch(err => this.setState({ error: err.message }));
 };
 
+  handleAddFriend(id) {
+    console.log("handling");
+        console.log(id);
+    API.addFriend(id);
+
+
+  };
+
   render() {
     return (
       <div>
@@ -48,7 +57,8 @@ class SearchFriend extends Component {
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
           />
-          <Friend users={this.state.users}/>
+          <Friend users={this.state.users}
+          handleAddFriend={this.handleAddFriend}/>
 
         </Container>
       </div>
