@@ -55,7 +55,7 @@ class ReactFacebookLoginWithButton extends React.Component {
   }
 
   renderOwnButton(renderProps) {
-    const { cssClass, size, icon, textButton, typeButton, buttonStyle } = this.props;
+    const { icon, textButton, typeButton, buttonStyle } = this.props;
 
     const { onClick, isDisabled } = renderProps;
 

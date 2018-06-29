@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 // import { Redirect } from 'react-router-dom'
-import { Route, Link, browserHistory } from 'react-router-dom'
-import logo from '../logo.svg';
+import {Link} from 'react-router-dom'
 import '../App.css';
 import axios from 'axios';
 import "./navbar.css";

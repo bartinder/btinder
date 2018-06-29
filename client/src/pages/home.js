@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import "./Home.css";
-// import axios from 'axios'
-import axios from 'axios';
-import { Route, Link, browserHistory } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Home extends Component {
     constructor(props) {
@@ -25,13 +22,7 @@ class Home extends Component {
 
 
     render() {
-        const imageStyle = {
-            width: 500,
-            height: 150
-        }
-        const buttonStyle = {
-            height: 40
-        }
+
         const loggedIn = this.props.loggedIn
         console.log(loggedIn);
         // if (this.state.redirectTo) {

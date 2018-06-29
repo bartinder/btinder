@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Card from "../components/Card";
-import Footer from "../components/Footer";
 import API from "../utils/API";
 
 class Discover extends Component {
@@ -27,10 +26,6 @@ class Discover extends Component {
   }
 
   handleBtnClick(event, i) {
-    console.log(
-      "data-value of button: ",
-      event.target.getAttribute("data-value")
-    );
     if (event.target.getAttribute("data-value") === "like") {
       //user.likedArray.push(this.state.bars[this.state.count].name);
       API.likeBar(this.state.bars[this.state.count].name);
@@ -41,7 +36,6 @@ class Discover extends Component {
     } else {
       this.setState({ count: this.state.count + 1 });
     }
-    console.log(this.props);
   }
 
   render() {
