@@ -24,6 +24,7 @@ class App extends Component {
       firstName: "",
       lastName: "",
       proiflePicture: "",
+      phoneNumber: "",
       id: null
     }
 
@@ -56,7 +57,8 @@ class App extends Component {
           id: response.data.user._id,
           firstName: response.data.user.firstName,
           lastName: response.data.user.lastName,
-          profilePicture: response.data.user.profilePicture
+          profilePicture: response.data.user.profilePicture,
+          phoneNumber: response.data.user.phoneNumber
         });
         
       } else {
@@ -108,6 +110,7 @@ class App extends Component {
               firstName = {this.state.firstName}
               lastName = {this.state.lastName}
               email = {this.state.email}
+              phoneNumber = {this.state.phoneNumber}
           />}
         /> 
         ) : (

@@ -65,7 +65,7 @@ const userSchema = new Schema({
 
 	phoneNumber: {
 		type: Number,
-		required: [false, ""],
+		required: [false, "Please Add Your Phone Number"],
 		// validate: {
 		// 	validator: function(v) {
 		// 			return /d{10}/.test(v);
