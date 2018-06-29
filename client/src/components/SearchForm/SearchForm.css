@@ -1,16 +1,19 @@
 form.search {
   overflow: auto;
-  /* margin-bottom: 10px; */
   position: relative;
   width: 400px;
 }
 
-form.search button[type="submit"] {
-  float: right;
-  margin-top: 10px;
+button#search.btn.btn-secondary {
   position: absolute;
   top: 0;
-  right: 10px;;
+  right: 10px;
+  margin-top: 5px;
+  background-color: inherit;
+}
+
+span#search.fas.fa-search {
+  color: #495057;
 }
 
 @media (max-width: 670px) { 

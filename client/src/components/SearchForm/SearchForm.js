@@ -10,16 +10,16 @@ const SearchForm = props => (
         name="friend"
         type="text"
         className="form-control"
-        placeholder="Search for Friends"
+        placeholder="Search friends"
         id="friend"
-        
       />
       <button
+        id="search"
         type="submit"
         onClick={props.handleFormSubmit}
         className="btn btn-secondary"
       >
-      <span className="fas fa-search"></span>
+        <span id="search" className="fas fa-search"></span>
       </button>
     </div>
   </form>
