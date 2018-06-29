@@ -12,7 +12,7 @@ class Friend extends Component {
 
 
 render() {
-  console.log(this.props.users)
+  console.log(this.props.friends)
   return (
     <div>
       {this.props.users.length ? ( 
@@ -22,10 +22,12 @@ render() {
         handleAddFriend = {this.props.handleAddFriend}
         id={user._id}
         key={user._id}
+        isFriend={this.props.friends.map(el => el._id).includes(user._id)}
         profilePicture={user.profilePicture}
         firstName={user.firstName}
         lastName={user.lastName}
         age={user.age}
+        friendsArray = {user.friendsArray}
         />
       ))}
       </div>

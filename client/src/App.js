@@ -25,7 +25,8 @@ class App extends Component {
       lastName: "",
       proiflePicture: "",
       phoneNumber: "",
-      id: null
+      id: null,
+      friendsArray: ""
     }
 
     this.getUser = this.getUser.bind(this)
@@ -58,7 +59,8 @@ class App extends Component {
           firstName: response.data.user.firstName,
           lastName: response.data.user.lastName,
           profilePicture: response.data.user.profilePicture,
-          phoneNumber: response.data.user.phoneNumber
+          phoneNumber: response.data.user.phoneNumber,
+          friendsArray: response.data.user.friendsArray
         });
         
       } else {
@@ -123,6 +125,7 @@ class App extends Component {
           render = {() => 
             <SearchFriend
               loggedIn = {this.state.loggedIn}
+              friendsArray = {this.state.friendsArray}
           />}
         />
         ) : (

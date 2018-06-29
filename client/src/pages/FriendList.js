@@ -7,7 +7,6 @@ import API from "../utils/API";
 
 const FriendList = props => (
   <li className="list-group-item">
-    {console.log(JSON.stringify(props) + "friendlist")}
     <Container>
       <Row>
         <Col size="xs-2 sm-3">
@@ -16,10 +15,11 @@ const FriendList = props => (
         <Col size="xs-10 sm-9">
           <h3>{props.firstName} {props.lastName}</h3>
           <p>Age: {props.age}</p>
+          {console.log(props.isFriend)}
           {/* <p> id: {props._id} </p> */}
-          <AddFriend
+          {!props.isFriend && <AddFriend
           {...props}
-          onClick={props.handleAddFriend}/>
+          onClick={props.handleAddFriend}/>}
           <InviteFriend />
         </Col>
       </Row>
