@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import API from "../utils/API"
 
 class Profile extends Component {
   constructor() {

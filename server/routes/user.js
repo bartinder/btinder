@@ -72,10 +72,16 @@ router.get('/current', (req, res, next) => {
     if (req.user) {
         // res.json({ user: req.user, message: "this is the user object passed from '/'"});
         User.findOne(
-            { _id: req.user._id }, function(err, user) {
-                console.log(user);
-                res.json({user: user});
+            { _id: req.user._id })
+            .then((user) => {
+                console.log(user)
+                User.find({_id: { $in: user.friendsArray}})
+                .then(modelDb => {
+                    user.friendsArray = modelDb;
+                    res.json({user: user});
+                })
             })
+            .catch(err => console.log(err))
     } else {
         res.json({ user: null })
     }

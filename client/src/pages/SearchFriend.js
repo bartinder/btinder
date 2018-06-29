@@ -14,11 +14,8 @@ class SearchFriend extends Component {
   };
 
   componentDidMount() {
-    // API.getUsers()
-    // .then(res => {
-    //   this.setState({ users: res.data})
-    // })
-    // .catch(err => console.log(err));
+    this.setState({users: this.props.friendsArray, friend: this.props.friendsArray})
+
   }
 
   handleInputChange = event => {
@@ -58,6 +55,7 @@ class SearchFriend extends Component {
             handleInputChange={this.handleInputChange}
           />
           <Friend users={this.state.users}
+          friends={this.props.friendsArray}
           handleAddFriend={this.handleAddFriend}/>
 
         </Container>
