@@ -1,8 +1,7 @@
 import React from 'react';
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem,  } from 'reactstrap';
-import {Glyphicon, Button} from "react-bootstrap"
+import {Glyphicon} from "react-bootstrap"
 import "./DropDownButton.css"
-import {Link} from "react-router-dom"
 import axios from "axios"
 
 export default class DropdownButton extends React.Component {

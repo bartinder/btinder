@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
     console.log('user signup');
     console.log(req.user);
 
-    const { email, password, firstName, lastName, age, profilePicture } = req.body
+    const { email, password, firstName, lastName, age, phoneNumber, profilePicture } = req.body
     // ADD VALIDATION
     User.findOne({ email: email }, (err, user) => {
         if (err) {
@@ -25,6 +25,7 @@ router.post('/', (req, res) => {
                 firstName: firstName,
                 lastName: lastName,
                 age: age,
+                phoneNumber: phoneNumber,
                 profilePicture: profilePicture
             })
             newUser.save((err, savedUser) => {
@@ -36,7 +37,7 @@ router.post('/', (req, res) => {
 })
 
 router.post("/search", function(req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   User.find({
     $or: [{firstName: {$regex: req.body.search}}, {lastName: {$regex: req.body.search}}]
   }).then (dbData => {
@@ -60,6 +61,7 @@ router.post(
             firstName: req.user.firstName,
             lastName: req.user.lastName,
             age: req.user.age,
+            phoneNumber: req.user.phoneNumber,
             profilePicture: req.user.profilePicture
         };
         res.send(userInfo);

@@ -1,43 +1,22 @@
 .footer {
-  /* min-height: 100px; */
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: white;
+  background-color: #7953d2;
 }
 
 button {
-  background: white;
-  padding: 10px;
+  background-color: #7953d2;
+  padding: 0;
   border: none;
 }
 
-.row.justify-content-around {
-  height: 50px;
+button.btn.btn-secondary {
+  background-color: #7953d2;
+  padding: 0;
 }
 
 span {
-  color: black;
+  color: #ffffff;
 }
-
-/* @media only screen and (max-width: 670px) {
-  .footer {
-    width: 100%;
-    max-height: 10px;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: white;
-
-  }
-
-  .nav.justify-content-center {
-    max-height:100px;
-    margin-bottom: 10px;
-
-  }
-} */

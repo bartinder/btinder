@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 // components
 import Signup from './pages/sign-up';
 import LoginForm from './pages/login-form';
@@ -70,9 +70,6 @@ class App extends Component {
   }
 
   render() {
-    const imageStyle = {
-      height: "100px"
-    }
     return (
       <Router>
       <div className="App">
@@ -97,6 +94,8 @@ class App extends Component {
           component={Home} 
         />
         )}
+
+        {this.state.loggedIn ? (
         <Route
           path="/profile"
           render = {() => 
@@ -107,8 +106,15 @@ class App extends Component {
               lastName = {this.state.lastName}
               email = {this.state.email}
           />}
+        /> 
+        ) : (
+        <Route
+          exact path="/profile"
+          component={Home} 
         />
+        )}
 
+        {this.state.loggedIn? (
         <Route
           exact path="/friends"
           render = {() => 
@@ -116,6 +122,13 @@ class App extends Component {
               loggedIn = {this.state.loggedIn}
           />}
         />
+        ) : (
+        <Route
+          exact path="/friends"
+          component = {Home}
+            
+        />
+        )}
 
         <Route
           path="/login"
@@ -131,13 +144,7 @@ class App extends Component {
               signup={this.signup}
             />}
         />
-        <Route
-          path="/dashboard"
-          render = {() =>
-            <Dashboard
-            loggedIn = {this.props.loggedIn}
-          />}
-        />
+        
         <Route
           path="/discover"
           component={Discover}
