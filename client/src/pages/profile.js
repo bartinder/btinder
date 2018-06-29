@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import axios from "axios";
-import API from "../utils/API";
 
 class Profile extends Component {
   constructor() {
@@ -31,12 +29,6 @@ class Profile extends Component {
     
 
   render() {
-    const fontStyles = {
-      fontSize: 100
-    };
-    const imageStyle = {
-      width: 400
-    };
 
 // if (this.state.loggedIn) {
     return (

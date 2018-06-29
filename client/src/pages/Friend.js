@@ -19,6 +19,7 @@ render() {
     <div className="friendCard mx-auto">
       {this.props.users.map(user => (
         <FriendList
+        handleAddFriend = {this.props.handleAddFriend}
         id={user._id}
         key={user._id}
         profilePicture={user.profilePicture}

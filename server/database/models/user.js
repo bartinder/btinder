@@ -59,7 +59,12 @@ const userSchema = new Schema({
 	profilePicture: { 
 		type: String,
 		required: [false, "Please Add a Profile Picture"]
-	}
+  }, 
+  
+  friendsArray: {
+    type: Array,
+    required: [false, ""]
+  }
 
 	// Need to add option of profilePicture to be entered as a jpg or png as well!
 

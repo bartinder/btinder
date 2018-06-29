@@ -122,11 +122,11 @@ render() {
 		cursor: "pointer",
 		// height:
 	}
-	const imageStyle = {
-		height: "200px",
-		position: "absolute",
-		marginLeft: "40%"
-	}
+	// const imageStyle = {
+	// 	height: "200px",
+	// 	position: "absolute",
+	// 	marginLeft: "40%"
+	// }
 	if (this.state.redirectTo) {
 		return <Redirect to={{ pathname: this.state.redirectTo }} />
 	} else {

@@ -2,7 +2,12 @@ import React from "react";
 import "./AddFriend.css";
 
 const AddFriend = props => (
-  <button type="button" className="btn btn-default AddFriend"><span className="fas fa-plus"></span></button>
+  <button onClick={props.onClick.bind(this,props.id)} data-value={props.id} type="button" className="btn btn-default AddFriend">
+  {console.log(JSON.stringify(props) + "addfriend")}
+    <span className="fas fa-plus">
+    </span>
+  </button>
+
 );
 
 export default AddFriend;
