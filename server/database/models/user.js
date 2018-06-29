@@ -64,11 +64,11 @@ const userSchema = new Schema({
   friendsArray: {
     type: Array,
     required: [false, ""]
-  }
+  },
 
 
 	// Need to add option of profilePicture to be entered as a jpg or png as well!
-
+	
 	phoneNumber: {
 		type: Number,
 		required: [false, "Please Add Your Phone Number"],
