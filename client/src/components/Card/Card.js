@@ -10,10 +10,12 @@ const Card = props => (
           <img className="card-img-top" src={props.pic} alt=""/>
           {/* Icon button container */}
           <Button onClick={props.handleBtnClick} />
+          <div className="card-header" id="title">
+            <h2 className="card-title" id="bar">{props.name}</h2>
+          </div>
           <div className="card-body">
             <div className="row align-items-center">
               <div className="col">
-                <h2 className="card-title">{props.name}</h2>
                 <p className="card-text">{props.address}</p>
                 <p className="card-text">{props.rating}</p>
                 <p className="card-text">Demographic: 23-30</p>

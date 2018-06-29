@@ -66,7 +66,19 @@ const userSchema = new Schema({
     required: [false, ""]
   }
 
+
 	// Need to add option of profilePicture to be entered as a jpg or png as well!
+
+	phoneNumber: {
+		type: Number,
+		required: [false, ""],
+		// validate: {
+		// 	validator: function(v) {
+		// 			return /d{10}/.test(v);
+		// 	},
+		// 	message: '{VALUE} is not a valid 10 digit number!'
+		// }
+	}
 
   });
 
