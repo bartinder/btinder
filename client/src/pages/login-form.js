@@ -68,62 +68,70 @@ class LoginForm extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
-              <div className="bg justify-content">
-                <div>
-                    <form className="form-horizontal login">
-                        <div className="form-group">
-                            <div className="col-ml-auto">
-                                <label className="form-label" htmlFor="username"></label>
-                            </div>
-                            <div className="col-mr-auto">
-                                <input className="form-input"
-                                    type="text"
-                                    id="email"
-                                    name="email"
-                                    placeholder="Email"
-                                    value={this.state.email}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <div className="col-ml-auto">
-                                <label className="form-label" htmlFor="password"></label>
-                            </div>
-                            <div className="col-mr-auto">
-                                <input className="form-input"
-                                    placeholder="Password"
-                                    type="password"
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                        </div>
-                        <div className="form-group ">
-                            <div className=""></div>
-                            <button
-                                className="btn-login col-mr-auto"
-                                onClick={this.handleSubmit}
-                                type="submit">Login</button>
-                        </div>
-                    </form>
-                        {this.state.errorMessage ? (<div><span className="signup">
-                            {this.state.errorMessage}</span>
-                        </div>
+              <div className="bg">
+                <div className="row">
+                  <div className="col mx-auto">
+                    <div className="card">
+                      <div className="card-body">
+                        <div className="row align-items-center">
+                          <div className="col">
+                            <form className="form-horizontal login">
+                              <div className="form-group">
+                                  <div className="col-ml-auto">
+                                      <label className="form-label" htmlFor="username"></label>
+                                  </div>
+                                  <div className="col-mr-auto">
+                                      <input className="form-input"
+                                          type="text"
+                                          id="email"
+                                          name="email"
+                                          placeholder="Email"
+                                          value={this.state.email}
+                                          onChange={this.handleChange}
+                                      />
+                                  </div>
+                              </div>
+                              <div className="form-group">
+                                  <div className="col-ml-auto">
+                                      <label className="form-label" htmlFor="password"></label>
+                                  </div>
+                                  <div className="col-mr-auto">
+                                      <input className="form-input"
+                                          placeholder="Password"
+                                          type="password"
+                                          name="password"
+                                          value={this.state.password}
+                                          onChange={this.handleChange}
+                                      />
+                                  </div>
+                              </div>
+                              <div className="form-group ">
+                                  <div className=""></div>
+                                  <button
+                                      className="btn-login mx-auto"
+                                      onClick={this.handleSubmit}
+                                      type="submit">Login</button>
+                              </div>
+                          </form>
+                              {this.state.errorMessage ? (<div><span className="signup">
+                                  {this.state.errorMessage}</span>
+                              </div>
 
-                        
-                            ) : (
-                        
-                        <div>
-                            <Link to="/signup">
-                                <span className="signup">Don't have an account? Sign Up</span>
-                            </Link>
-                        </div>)}
-
+                              
+                                  ) : (
+                              
+                              <div>
+                                  <Link to="/signup">
+                                      <span className="signup">Don't have an account? Sign Up</span>
+                                  </Link>
+                              </div>)}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-        
+              </div>
             )
         }
     }
