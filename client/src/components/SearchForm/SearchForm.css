@@ -10,6 +10,7 @@ button#search.btn.btn-secondary {
   right: 10px;
   margin-top: 5px;
   background-color: inherit;
+  border: none;
 }
 
 span#search.fas.fa-search {
