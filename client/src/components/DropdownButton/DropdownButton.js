@@ -1,8 +1,8 @@
 import React from 'react';
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem,  } from 'reactstrap';
-import {Glyphicon} from "react-bootstrap"
-import "./DropDownButton.css"
-import axios from "axios"
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Glyphicon } from "react-bootstrap";
+import "./DropDownButton.css";
+import axios from "axios";
 
 export default class DropdownButton extends React.Component {
   constructor(props) {
@@ -26,29 +26,47 @@ export default class DropdownButton extends React.Component {
     axios.post('/api/users/logout').then(response => {
       console.log(response.data)
       window.location.assign("/login");
-
-    }).catch(error => {
-        console.log('Logout error')
+    }).catch(err => {
+        console.log('Logout error: ' + err)
     })
   }
 
   render() {
     const imageStyle = {
-        height: "50px"
+      height: "100px"
     }
     return (
-    <div>
-      <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle nocaret="true">
+      <div>
+        <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+          <DropdownToggle nocaret="true">
             <Glyphicon glyph="align-justify" />
-        </DropdownToggle>
-        <DropdownMenu>
-          <DropdownItem header><img alt="profile" src={this.props.src} style={imageStyle}/>{this.props.firstName} {this.props.lastName}</DropdownItem>
-          <DropdownItem><a href="/profile">My Profile</a></DropdownItem>
-          <DropdownItem onClick={this.logout}>Logout</DropdownItem>
-        </DropdownMenu>
-      </ButtonDropdown>
-    </div>
+          </DropdownToggle>
+          <DropdownMenu>
+            <div className="row">
+              <div className="col-12">
+                <DropdownItem id="profile-pic">
+                  <img
+                    alt="Profile picture"
+                    src={this.props.src}
+                    style={imageStyle}
+                    className="rounded img-fluid mx-auto d-block"
+                  />
+                </DropdownItem>
+                <DropdownItem id="name" className="d-flex justify-content-center">
+                  {this.props.firstName} {this.props.lastName}
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem id="settings" href="/profile" className="d-flex justify-content-center">
+                  Settings
+                </DropdownItem>
+                <DropdownItem id="logout" onClick={this.logout} className="d-flex justify-content-center">
+                  Logout
+                </DropdownItem>
+              </div>
+            </div>
+          </DropdownMenu>
+        </ButtonDropdown>
+      </div>
     );
   }
 }

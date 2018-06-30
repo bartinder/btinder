@@ -1,20 +1,23 @@
-.dropdown-item {
-font-size: 15px;
-padding: 0;
-width: fit-content;
-color: blue
+button#name,
+button#logout,
+a#settings {
+  color: #000070;
 }
 
-.dropdown-header {
-font-size: 15px;
-padding: 0;
-width: fit-content
+button#logout,
+a#settings {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
 }
 
-.btn.btn-secondary {
-  border: none;
+button#name {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
 }
 
-.dropdown-menu.show {
-  width: 100px;
+button#profile-pic:active,
+button#name:active,
+button#logout:active,
+a#settings:active {
+  background-color: inherit;
 }
