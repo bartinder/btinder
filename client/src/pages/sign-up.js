@@ -121,21 +121,22 @@ render() {
 		backgroundColor: "#4C69BA",
 		borderColor: "#4C69BA",
 		color: "#FFF",
-		cursor: "pointer",
-		// height:
+		cursor: "pointer"
 	}
-	// const imageStyle = {
-	// 	height: "200px",
-	// 	position: "absolute",
-	// 	marginLeft: "40%"
-	// }
+
 	if (this.state.redirectTo) {
 		return <Redirect to={{ pathname: this.state.redirectTo }} />
 	} else {
 	return (
-		<div className="bg SignupForm">
-			{/* <h4>Sign Up</h4> */}
-			<form className="form-horizontal signup-form">
+    <div className="bg">
+      <div className="row">
+        <div className="col mx-auto">
+          <div className="card">
+            <div className="card-body">
+              <div className="row align-items-center">
+                <div className="col">
+
+                  <form className="form-horizontal signup-form">
 				<div className="form-group signup-form">
 					<div className="col col-mr-auto">
 						<input className="form-input"
@@ -255,7 +256,6 @@ render() {
 				</div>
 				<div className="form-group signup-form ">
 					<div className="col-7"></div>
-					{/* {this.state.profilePicture && (<img src= {this.state.profilePicture} style={imageStyle}/>)} */}
 					<button
 						className="btn click"
 						onClick={this.handleSubmit}
@@ -266,8 +266,14 @@ render() {
 				{this.state.errorMessage}
 				</div>
 			</form>
-		</div>
-
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 	)
 }
 }
