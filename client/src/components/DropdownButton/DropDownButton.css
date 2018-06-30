@@ -16,14 +16,26 @@ a#settings:hover {
   background-color: #4527a0;
 }
 
+button#logout:active,
+a#settings:active {
+  color: #ffffff;
+  background-color: #000070;
+}
+
 button#name {
   font-family: 'Rubik', sans-serif;
   font-size: 1rem;
 }
 
 button#profile-pic:active,
-button#name:active,
-button#logout:active,
-a#settings:active {
+button#name:active {
   background-color: inherit;
+}
+
+.dropdown-menu.show {
+  padding-bottom: 0;
+}
+
+.dropdown-divider {
+  margin: 0;
 }
