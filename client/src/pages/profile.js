@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import API from "../utils/API"
-
-
+import API from "../utils/API";
+import "./profile.css";
 
 class Profile extends Component {
   constructor() {
@@ -53,56 +52,64 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="bg SignupForm">
-        <form className="form-horizontal signup-form">
-          <div className="form-group signup-form">
-            <label htmlFor="firstName">First Name:</label>
-            <div className="col col-mr-auto">
+      <div className="card">
+        <div className="card-body">
+          <div className="card-header">
+            <h3 className="card-title" id="settings">
+              Settings
+            </h3>
+          </div>
+          <br />
+          <form>
+            <div className="form-group">
+              <label htmlFor="firstName">
+                First name
+              </label>
               <input
-                className="form-input"
                 type="text"
+                className="form-control"
                 id="firstName"
-                name="firstName"
+							  name="firstName"
                 placeholder={this.props.firstName}
                 value={this.state.firstName}
-                onChange={this.handleChange}
+							  onChange={this.handleChange}
               />
             </div>
-          </div>
-          <div className="form-group signup-form">
-            <label htmlFor="lastName">Last Name:</label>
-            <div className="col col-mr-auto">
+            <div className="form-group">
+              <label htmlFor="lastName">
+                Last name
+              </label>
               <input
-                className="form-input"
                 type="text"
+                className="form-control"
                 id="lastName"
                 name="lastName"
                 placeholder={this.props.lastName}
                 value={this.state.lastName}
-                onChange={this.handleChange}
+							  onChange={this.handleChange}
               />
             </div>
-          </div>
-          <div className="form-group signup-form">
-            <label htmlFor="email">Email:</label>
-            <div className="col col-mr-auto">
+            <div className="form-group">
+              <label htmlFor="email">
+                Email
+              </label>
               <input
-                className="form-input"
-                type="text"
+                type="email"
+                className="form-control"
                 id="email"
                 name="email"
                 placeholder={this.props.email}
                 value={this.state.email}
-                onChange={this.handleChange}
+							  onChange={this.handleChange}
               />
             </div>
-          </div>
-          <div className="form-group signup-form">
-            <label htmlFor="phoneNumber">Phone Number:</label>
-            <div className="col col-mr-auto">
+            <div className="form-group">
+              <label htmlFor="phoneNumber">
+                Phone
+              </label>
               <input
-                className="form-input"
-                type="text"
+                type="tel"
+                className="form-control"
                 id="phoneNumber"
                 name="phoneNumber"
                 placeholder={this.props.phoneNumber}
@@ -110,20 +117,18 @@ class Profile extends Component {
                 onChange={this.handleChange}
               />
             </div>
-          </div>
-          <div className="form-group signup-form ">
-            <div className="col-7" />
-
+            <br />
             <button
-              className="btn click"
-              onClick={this.handleSubmit}
               type="submit"
+              id="update"
+              className="btn btn-primary"
+              onClick={this.handleSubmit}
             >
-              Update Info
+              Update profile
             </button>
-          </div>
-          <div style={{ color: "black" }}>{this.state.errorMessage}</div>
-        </form>
+            {console.log("'Update profile' error: " + this.state.errorMessage)}
+          </form>
+        </div>
       </div>
     );
   }

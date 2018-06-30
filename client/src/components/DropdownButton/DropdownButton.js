@@ -46,7 +46,7 @@ export default class DropdownButton extends React.Component {
               <div className="col-12">
                 <DropdownItem id="profile-pic">
                   <img
-                    alt="Profile picture"
+                    alt="profile"
                     src={this.props.src}
                     style={imageStyle}
                     className="rounded img-fluid mx-auto d-block"
