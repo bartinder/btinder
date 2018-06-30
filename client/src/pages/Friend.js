@@ -2,14 +2,10 @@ import React, { Component } from "react";
 import FriendList from "./FriendList";
 import "./Friend.css";
 
-
-
-
 class Friend extends Component {
   state= {
     users: []
   }
-
 
 render() {
   console.log(this.props.friends)
@@ -32,7 +28,7 @@ render() {
       ))}
       </div>
       ) : (
-        <h3>No Results to Display</h3>
+        <h3>No friends to display</h3>
       )}
       </div>
       );

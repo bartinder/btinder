@@ -8,7 +8,6 @@ const Card = props => (
       <div className="col mx-auto">
         <div className="card">
           <img className="card-img-top" src={props.pic} alt=""/>
-          {/* Icon button container */}
           <Button onClick={props.handleBtnClick} />
           <div className="card-header" id="title">
             <h2 className="card-title" id="bar">{props.name}</h2>
@@ -18,7 +17,7 @@ const Card = props => (
               <div className="col">
                 <p className="card-text">{props.address}</p>
                 <p className="card-text">{props.rating}</p>
-                <p className="card-text">Demographic: 23-30</p>
+                {/* <p className="card-text">Demographic: 23-30</p> */}
               </div>
             </div>
           </div>

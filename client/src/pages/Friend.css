@@ -1,6 +1,7 @@
-.friendCard {
-  border-radius: 2px;
-  margin: 1rem;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  text-align: left;
+h3 {
+  font-family: 'Rubik', sans-serif;
+}
+
+h3#name {
+  font-size: 1rem;
 }

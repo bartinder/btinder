@@ -1,4 +1,3 @@
-.InviteFriend {
-  position: relative;
-  left: 170px;
+button.InviteFriend {
+  margin: 0.25rem;
 }

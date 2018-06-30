@@ -14,12 +14,16 @@ class SearchFriend extends Component {
   };
 
   componentDidMount() {
-    this.setState({users: this.props.friendsArray, friend: this.props.friendsArray})
-
+    this.setState({
+      users: this.props.friendsArray,
+      friend: this.props.friendsArray
+    })
   }
 
   handleInputChange = event => {
-    this.setState({ search: event.target.value });
+    this.setState({
+      search: event.target.value
+    });
   };
 
   handleFormSubmit = event => {
@@ -39,31 +43,28 @@ class SearchFriend extends Component {
 
   handleAddFriend(id) {
     console.log("handling");
-        console.log(id);
+    console.log(id);
     API.addFriend(id);
-
-
   };
 
   render() {
     return (
       <div>
         <Container style={{ minHeight: "100%" }}>
-          <h1 className="text-center"></h1>
+          <br />
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
           />
-          <Friend users={this.state.users}
-          friends={this.props.friendsArray}
-          handleAddFriend={this.handleAddFriend}/>
-
+          <Friend
+            users={this.state.users}
+            friends={this.props.friendsArray}
+            handleAddFriend={this.handleAddFriend}
+          />
         </Container>
       </div>
     );
   }
 }
-  
 
 export default SearchFriend;
-

@@ -1,4 +1,3 @@
-.AddFriend {
-  position: relative;
-  left: 160px;
+button.AddFriend {
+  margin: 0.25rem;
 }
