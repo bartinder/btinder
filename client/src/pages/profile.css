@@ -1,0 +1,18 @@
+h3#settings {
+  color: #000070;
+  font-family: 'Rubik', sans-serif;
+}
+
+.form-group {
+  font-family: 'Raleway', sans-serif;
+}
+
+button#update {
+  color: #ffffff;
+  background-color: #4527a0; 
+  font-family: 'Raleway', sans-serif;
+}
+
+button#update:active {
+  background-color: #000070;
+}
