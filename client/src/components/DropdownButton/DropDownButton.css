@@ -10,6 +10,12 @@ a#settings {
   font-size: 0.9rem;
 }
 
+button#logout:hover,
+a#settings:hover {
+  color: #ffffff;
+  background-color: #4527a0;
+}
+
 button#name {
   font-family: 'Rubik', sans-serif;
   font-size: 1rem;
