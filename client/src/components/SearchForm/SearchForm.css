@@ -1,7 +1,7 @@
 form.search {
+  width: 18rem;
   overflow: auto;
   position: relative;
-  width: 400px;
 }
 
 button#search.btn.btn-secondary {
@@ -10,14 +10,9 @@ button#search.btn.btn-secondary {
   right: 10px;
   margin-top: 5px;
   background-color: inherit;
+  border: none;
 }
 
 span#search.fas.fa-search {
   color: #495057;
-}
-
-@media (max-width: 670px) { 
-  form.search {
-    width: 100%;
-  }
 }

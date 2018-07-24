@@ -1,3 +1,4 @@
+
 .dropdown-item {
 font-size: 30px;
 padding: 0;
@@ -14,10 +15,45 @@ width: fit-content;
 color: blue;
 }
 
-.btn.btn-secondary {
-  border: none;
+button#name,
+button#logout,
+a#settings {
+  color: #000070;
+}
+
+button#logout,
+a#settings {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+
+}
+
+button#logout:hover,
+a#settings:hover {
+  color: #ffffff;
+  background-color: #4527a0;
+}
+
+button#logout:active,
+a#settings:active {
+  color: #ffffff;
+  background-color: #000070;
+}
+
+button#name {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+}
+
+button#profile-pic:active,
+button#name:active {
+  background-color: inherit;
 }
 
 .dropdown-menu.show {
-  width: 100px;
+  padding-bottom: 0;
+}
+
+.dropdown-divider {
+  margin: 0;
 }
