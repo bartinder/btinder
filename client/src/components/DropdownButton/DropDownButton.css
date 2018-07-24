@@ -1,3 +1,20 @@
+
+.dropdown-item {
+font-size: 30px;
+padding: 0;
+width: fit-content;
+color: blue;
+font-family: 'Raleway', sans-serif;
+}
+
+.dropdown-header {
+font-size: 20px;
+font-weight: bold;
+padding: 0;
+width: fit-content;
+color: blue;
+}
+
 button#name,
 button#logout,
 a#settings {
@@ -8,6 +25,7 @@ button#logout,
 a#settings {
   font-family: 'Raleway', sans-serif;
   font-size: 0.9rem;
+
 }
 
 button#logout:hover,

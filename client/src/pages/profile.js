@@ -3,6 +3,7 @@ import axios from "axios";
 import API from "../utils/API";
 import "./profile.css";
 
+
 class Profile extends Component {
   constructor() {
     super();
@@ -12,7 +13,9 @@ class Profile extends Component {
       firstName: "",
       lastName: "",
       email: "",
-      phoneNumber: ""
+      phoneNumber: null,
+      likedBars: "",
+      friendsArray: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,8 +28,12 @@ class Profile extends Component {
       firstName: this.props.firstName,
       lastName: this.props.lastName,
       email: this.props.email,
-      phoneNumber: this.props.phoneNumber
+      phoneNumber: this.props.phoneNumber,
+      likedBars: this.props.likedBars
     });
+    console.log("Liked Bars Array:", this.props.likedBars)
+    console.log("Friends Array", this.props.friendsArray)
+    console.log("Friends First Name", this.props.friendsFirstName)
   }
 
   getUser() {
@@ -34,7 +41,8 @@ class Profile extends Component {
       if (response.data.user) {
         this.setState({
           loggedIn: true,
-          id: response.data.user._id
+          id: response.data.user._id,
+          friendsArray: response.data.user.friendsArray
         });
       }
     });
@@ -112,8 +120,8 @@ class Profile extends Component {
                 className="form-control"
                 id="phoneNumber"
                 name="phoneNumber"
-                placeholder={this.props.phoneNumber}
-                value={this.state.phoneNumber}
+                placeholder={this.props.phoneNumber ? this.props.phoneNumber : "Enter a Number!"}
+                value={this.state.phoneNumber ? this.state.phoneNumber : ""}
                 onChange={this.handleChange}
               />
             </div>
@@ -126,9 +134,27 @@ class Profile extends Component {
             >
               Update profile
             </button>
-            {console.log("'Update profile' error: " + this.state.errorMessage)}
-          </form>
-        </div>
+
+          </div>
+          {/* <div className="likedBars" >
+            <h3> Liked Bars </h3>
+            {this.props.likedBars.map(element => {
+              return   <li> {element} </li>
+            })}
+          </div> */}
+          {/* <div className="myFriends">
+            <h3> My Friends </h3>
+            {this.props.friendsArray.map(element => {
+              return   (<div> 
+                              <li> Name: {element.firstName} {element.lastName} </li>
+                              <li> Their Liked Bars: {element.likedArray}</li> 
+                        </div>)
+            })}
+          </div> */}
+          
+        </form>
+
+      </div>
       </div>
     );
   }

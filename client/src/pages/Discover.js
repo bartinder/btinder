@@ -26,16 +26,20 @@ class Discover extends Component {
   }
 
   handleBtnClick(event, i) {
+    console.log(
+      "data-value of button: ",
+      event.target.getAttribute("data-value")
+    );
     if (event.target.getAttribute("data-value") === "like") {
       //user.likedArray.push(this.state.bars[this.state.count].name);
-      API.likeBar(this.state.bars[this.state.count].name);
       this.setState({ count: this.state.count + 1 });
     } else if (event.target.getAttribute("data-value") === "dislike") {
-      API.dislikeBar(this.state.bars[this.state.count].name);
+      //user.dislikedArray.push(this.state.bars[this.state.count].name);
       this.setState({ count: this.state.count + 1 });
     } else {
       this.setState({ count: this.state.count + 1 });
     }
+    console.log(this.props);
   }
 
   render() {
