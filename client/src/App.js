@@ -26,7 +26,9 @@ class App extends Component {
       proiflePicture: "",
       phoneNumber: "",
       id: null,
-      friendsArray: ""
+      friendsArray: "",
+      likedBars: "",
+      friendsFirstName: ""
     }
 
     this.getUser = this.getUser.bind(this)
@@ -60,8 +62,12 @@ class App extends Component {
           lastName: response.data.user.lastName,
           profilePicture: response.data.user.profilePicture,
           phoneNumber: response.data.user.phoneNumber,
-          friendsArray: response.data.user.friendsArray
+          friendsArray: response.data.user.friendsArray,
+          friendsFirstName: response.data.user.friendsArray.firstName,
+          friendsLastName: response.data.user.friendsArray.LastName,
+          likedBars: response.data.user.likedArray
         });
+        // console.log("response.data.user.friendsArray.firstName", this.state.friendsFirstName)
         
       } else {
         console.log('Get user: no user');
@@ -110,6 +116,10 @@ class App extends Component {
               lastName = {this.state.lastName}
               email = {this.state.email}
               phoneNumber = {this.state.phoneNumber}
+              likedBars = {this.state.likedBars}
+              friendsArray = {this.state.friendsArray}
+              friendsFirstName = {this.state.friendsFirstName}
+              friendsLastName = {this.state.friendsLastName}
           />}
         /> 
         ) : (

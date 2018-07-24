@@ -34,7 +34,8 @@ export default class DropdownButton extends React.Component {
 
   render() {
     const imageStyle = {
-        height: "50px"
+        height: "75px",
+        paddingRight: "10px"
     }
     return (
     <div>
