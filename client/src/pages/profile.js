@@ -134,8 +134,7 @@ class Profile extends Component {
             >
               Update profile
             </button>
-
-          </div>
+            
           {/* <div className="likedBars" >
             <h3> Liked Bars </h3>
             {this.props.likedBars.map(element => {
