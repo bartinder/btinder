@@ -61,8 +61,10 @@ class Signup extends Component {
 						redirectTo: '/login'
 					})
 				} else {
-					if (rd.error) 
-						{console.log(rd.error)};
+					if (rd.error) {
+						console.log(rd.error);
+						this.setState({errorMessage: rd.error});
+					};
 
 					if (rd.errors) {
 						console.log(rd.errors)
@@ -198,7 +200,7 @@ render() {
 				<div className="form-group signup-form">
 					<div className="col col-mr-auto">
 						<input className="form-input"
-							placeholder="919-919-9999"
+							placeholder="9199199999"
 							type="phoneNumber"
 							name="phoneNumber"
 							value={this.state.phoneNumber}
