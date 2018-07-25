@@ -32,9 +32,11 @@ class Discover extends Component {
     );
     if (event.target.getAttribute("data-value") === "like") {
       //user.likedArray.push(this.state.bars[this.state.count].name);
+      API.likeBar(this.state.bars[this.state.count].name);
       this.setState({ count: this.state.count + 1 });
     } else if (event.target.getAttribute("data-value") === "dislike") {
       //user.dislikedArray.push(this.state.bars[this.state.count].name);
+      API.dislikeBar(this.state.bars[this.state.count].name);
       this.setState({ count: this.state.count + 1 });
     } else {
       this.setState({ count: this.state.count + 1 });
