@@ -16,3 +16,7 @@ button#update {
 button#update:active {
   background-color: #000070;
 }
+
+hr {
+  border-top: 1px solid #000070
+}

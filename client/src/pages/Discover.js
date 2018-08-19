@@ -46,7 +46,7 @@ class Discover extends Component {
 
   render() {
     return (
-      <div className="discover">
+      <div className="discover" style={{height:"100%"}}>
         <Card
           {...this.state.bars[this.state.count]}
           handleBtnClick={this.handleBtnClick}

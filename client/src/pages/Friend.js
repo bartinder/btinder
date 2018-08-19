@@ -10,7 +10,7 @@ class Friend extends Component {
 render() {
   console.log(this.props.friends)
   return (
-    <div>
+    <div style={{marginBottom:"50px"}}>
       {this.props.users.length ? ( 
     <div className="friendCard mx-auto">
       {this.props.users.map(user => (
@@ -24,6 +24,9 @@ render() {
         lastName={user.lastName}
         age={user.age}
         friendsArray = {user.friendsArray}
+        email={user.email}
+        likedBars = {user.likedArray}
+        dislikedBars = {user.disLikedArray}
         />
       ))}
       </div>
