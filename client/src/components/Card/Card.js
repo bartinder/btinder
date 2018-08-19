@@ -7,7 +7,7 @@ const Card = props => (
     <div className="row">
       <div className="col mx-auto">
         <div className="card">
-          <img className="card-img-top" src={props.pic} alt=""/>
+          <img className="card-img-top" src={props.pic || "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"} alt=""/>
           <Button onClick={props.handleBtnClick} />
           <div className="card-header" id="title">
             <h2 className="card-title" id="bar">{props.name}</h2>
