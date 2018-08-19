@@ -59,8 +59,12 @@ class Profile extends Component {
   }
 
   render() {
+    const cardStyle = {
+      marginTop: '10px'
+    }
     return (
-      <div className="card">
+    <div style={{marginBottom:"50px"}}>
+      <div className="card" style = {cardStyle}>
         <div className="card-body">
           <div className="card-header">
             <h3 className="card-title" id="settings">
@@ -134,27 +138,51 @@ class Profile extends Component {
             >
               Update profile
             </button>
-            
-          {/* <div className="likedBars" >
-            <h3> Liked Bars </h3>
-            {this.props.likedBars.map(element => {
-              return   <li> {element} </li>
-            })}
-          </div> */}
-          {/* <div className="myFriends">
-            <h3> My Friends </h3>
-            {this.props.friendsArray.map(element => {
-              return   (<div> 
-                              <li> Name: {element.firstName} {element.lastName} </li>
-                              <li> Their Liked Bars: {element.likedArray}</li> 
-                        </div>)
-            })}
-          </div> */}
           
         </form>
 
       </div>
       </div>
+
+    {/* <div className="card" style={cardStyle}>
+    <div className="card-body">
+      <div className="card-header">
+        <h3 className="card-title" id="settings">
+          My Bars
+        </h3>
+      </div>
+      <form>
+        <div className="form-group">
+          <label htmlFor="firstName">
+            <h3>Liked Bars</h3>
+          </label>
+          <div>
+          {this.props.likedBars.map(element => {
+              return   <li> {element} </li>
+            })}
+          </div>
+        </div>
+
+        <div className="form-group">
+            <h3>My Friends</h3>
+          <div>
+          {this.props.friendsArray.map(element => {
+              return   (<div> 
+                              <ul style={{color: "blue"}}> {element.firstName} {element.lastName} </ul>
+                              <p> Their Liked Bars: </p>
+                              {element.likedArray.map(element => {
+                              return (<li> {element}</li> )})}
+                        </div>)
+            })}
+          </div>
+        </div>
+
+      </form>
+    </div>
+    </div> */}
+  
+  </div>
+
     );
   }
 }

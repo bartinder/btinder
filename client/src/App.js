@@ -13,6 +13,7 @@ import Wrapper from "./components/Wrapper";
 import SearchFriend from "./pages/SearchFriend";
 import Footer from "./components/Footer/Footer";
 import Profile from "./pages/profile";
+import MyStuff from "./pages/MyPage";
 
 
 class App extends Component {
@@ -65,7 +66,8 @@ class App extends Component {
           friendsArray: response.data.user.friendsArray,
           friendsFirstName: response.data.user.friendsArray.firstName,
           friendsLastName: response.data.user.friendsArray.LastName,
-          likedBars: response.data.user.likedArray
+          likedBars: response.data.user.likedArray,
+          disLikedBars:response.data.user.disLikedArray
         });
         // console.log("response.data.user.friendsArray.firstName", this.state.friendsFirstName)
         
@@ -125,6 +127,31 @@ class App extends Component {
         ) : (
         <Route
           exact path="/profile"
+          component={Home} 
+        />
+        )}
+
+        {this.state.loggedIn ? (
+        <Route
+          path="/mystuff"
+          render = {() => 
+            <MyStuff
+              updateUser = {this.updateUser}
+              loggedIn = {this.state.loggedIn}
+              firstName = {this.state.firstName}
+              lastName = {this.state.lastName}
+              email = {this.state.email}
+              phoneNumber = {this.state.phoneNumber}
+              likedBars = {this.state.likedBars}
+              disLikedBars = {this.state.disLikedBars}
+              friendsArray = {this.state.friendsArray}
+              // friendsFirstName = {this.state.friendsFirstName}
+              // friendsLastName = {this.state.friendsLastName}
+          />}
+        /> 
+        ) : (
+        <Route
+          exact path="/mystuff"
           component={Home} 
         />
         )}

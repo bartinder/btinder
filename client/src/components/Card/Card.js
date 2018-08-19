@@ -3,7 +3,7 @@ import "./Card.css";
 import Button from "../Button";
 
 const Card = props => (
-  <div className="barCard">
+  <div className="barCard" style={{marginTop:"10px", marginBottom:"50px"}}>
     <div className="row">
       <div className="col mx-auto">
         <div className="card">

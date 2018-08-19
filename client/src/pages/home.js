@@ -25,7 +25,7 @@ class Home extends Component {
 
   render() {
     const loggedIn = this.props.loggedIn
-    console.log(loggedIn);
+    // console.log(loggedIn);
 
     if (loggedIn) {
       return (

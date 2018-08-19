@@ -60,6 +60,9 @@ export default class DropdownButton extends React.Component {
                 <DropdownItem id="settings" href="/profile" className="d-flex justify-content-center">
                   Settings
                 </DropdownItem>
+                <DropdownItem id="settings" href="/mystuff" className="d-flex justify-content-center">
+                  My Bars and Friends
+                </DropdownItem>
                 <DropdownItem id="logout" onClick={this.logout} className="d-flex justify-content-center">
                   Sign out
                 </DropdownItem>
