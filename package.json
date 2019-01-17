@@ -34,14 +34,14 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
-    "install": "cd client && yarn install",
+    "install": "cd client && npm run install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
     "api": "nodemon ./server/server.js",
     "devs": "concurrently \"react-scripts start\" \"nodemon ./server/server.js\"",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\" ",
     "dev:server": "nodemon ./server/server.js",
-    "dev:client": "cd client && yarn start"
+    "dev:client": "cd client && npm run start"
   },
   "engines": {
     "node": "9.3.0"
