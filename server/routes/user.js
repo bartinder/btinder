@@ -37,11 +37,13 @@ router.post('/', (req, res) => {
 })
 
 router.post("/search", function(req, res) {
-  // console.log(req.body);
   User.find({
-    $or: [{firstName: {$regex: req.body.search}}, {lastName: {$regex: req.body.search}}]
+    $or: [{firstName: {$regex: req.body.search}}, 
+            {lastName: {$regex: req.body.search}},
+                {likedArray: req.body.search  }]
   }).then (dbData => {
     res.json(dbData);
+    console.log(req.body)
   })
 })
 

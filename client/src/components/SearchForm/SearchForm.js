@@ -10,7 +10,7 @@ const SearchForm = props => (
         name="friend"
         type="text"
         className="form-control"
-        placeholder="Search friends"
+        placeholder="Search Friends By Name or Bar"
         id="friend"
       />
       <button

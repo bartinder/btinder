@@ -37,3 +37,7 @@ span.signup {
   position: relative;
   /* width: 100%; */
 }
+
+#loginCard {
+  margin-top:40px;
+}

@@ -13,6 +13,7 @@ render() {
     <div style={{marginBottom:"50px"}}>
       {this.props.users.length ? ( 
     <div className="friendCard mx-auto">
+      <h3>Friends:</h3>
       {this.props.users.map(user => (
         <FriendList
         handleAddFriend = {this.props.handleAddFriend}
@@ -31,7 +32,13 @@ render() {
       ))}
       </div>
       ) : (
-        <h3>No results to display</h3>
+      <div>
+        {/* <h3>Suggested Friends: </h3>
+        <div className="friendCard mx-auto">
+
+        </div> */}
+        <h3>No Results to Display</h3>
+      </div>
       )}
       </div>
       );

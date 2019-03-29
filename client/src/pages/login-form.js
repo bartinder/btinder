@@ -70,7 +70,7 @@ class LoginForm extends Component {
             return (
               <div className="bg">
                 <div className="row">
-                  <div className="col mx-auto">
+                  <div className="col mx-auto" id="loginCard">
                     <div className="card">
                       <div className="card-body">
                         <div className="row align-items-center">
